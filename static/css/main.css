@@ -8,7 +8,7 @@ body {color: #000; text-align: left; font: 16px 'Raleway', cursive; line-height:
 #outer {box-sizing: content-box; max-width: 800px; margin: auto; min-height: 100%; padding: 0 20px;}
 #outer > .table {box-sizing: border-box; min-height: 100%;}
 
-header {border-bottom: 1px solid #777;}
+header {border-bottom: 1px solid #777; white-space: nowrap;}
 header > .margin {margin-top: 20px; margin-bottom: 18px;}
 header .table {width: 100%;}
 header .td {vertical-align: middle;}
@@ -16,12 +16,23 @@ header .td:first-child {width: 100%; font-size: 35px; line-height: 0.9; font-wei
 
 .menu-cont {position: relative;}
 /*.menu-cont:hover nav {display: block;}*/
-nav {display: none; position: absolute; right: -12px; top: -12px; white-space: nowrap; box-shadow: 4px 4px 20px #C0C0C0; background-color: #FDFDFD; border-radius: 3px; z-index: 5;}
-nav ul {list-style: none;}
-nav li {font-size: 20px; display: block;}
-nav li:first-child {font-size: 26px;}
-nav li:hover {background-color: #EEE;}
-nav a {padding: 8px 15px; text-decoration: none; color: #000; display: block;}
+#nav-drop {display: none; position: absolute; right: 0px; top: -8px; box-shadow: 4px 4px 20px #C0C0C0; background-color: #FDFDFD; border-radius: 3px; z-index: 5;}
+#nav-drop ul {list-style: none;}
+#nav-drop li {font-size: 20px; display: block;}
+/*nav li:first-child {font-size: 26px;}*/
+#nav-drop li:hover {background-color: #EEE;}
+#nav-drop a {padding: 8px 15px; text-decoration: none; color: #000; display: block;}
+
+#nav-hori img, #nav-hori ul, #nav-hori li {vertical-align: middle;}
+#nav-hori ul {list-style: none; display: none;}
+#nav-hori li {display: inline; margin-left: 25px; font-size: 20px;}
+#nav-hori a {text-decoration: none; color: #000;}
+#menu-link {margin-left: 25px;}
+
+@media screen and (min-width: 600px) {
+  #menu-link {display: none;}
+  #nav-hori ul {display: inline;}
+}
 
 article {height: 100%;}
 
@@ -40,3 +51,12 @@ h1 {font-size: 26px;}
 .table {display: table;}
 .tr {display: table-row; vertical-align: top;}
 .td {display: table-cell; vertical-align: top;}
+
+
+@media print {
+  #outer {padding: 0;}
+  header > .margin {margin-top: 0;}
+  footer > .margin {display: none;}
+  #menu-link {display: none;}
+  #nav-hori ul {display: none;}
+}
