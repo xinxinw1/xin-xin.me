@@ -3,8 +3,8 @@ html
     title= title
     link(rel="stylesheet", href="https://fonts.googleapis.com/css?family=Raleway")
     link(rel="stylesheet", href="/css/main.css")
+    script(src="/js/main.js")
   body
-    nav menu
     #outer
       .table
         .tr
@@ -13,7 +13,16 @@ html
               .table
                 .td Xin-Xin Wang
                 .td
-                  img(src="/img/menu.png")
+                  .menu-cont
+                    a#menu-link(href="#")
+                      img(src="/img/menu.png")
+                    nav#nav
+                      ul
+                        li: a(href="#") Xin-Xin Wang
+                        li: a(href="#") Code
+                        li: a(href="#") Math
+                        li: a(href="#") Music
+                        li: a(href="#") Contact
         .tr
           article.td
             .margin
@@ -35,3 +44,4 @@ html
             .margin
               p &copy; 2016 Xin-Xin Wang
               p This website is #[a(href="https://github.com/xinxinw1/xin-xin.me") open source]!
+    #overlay

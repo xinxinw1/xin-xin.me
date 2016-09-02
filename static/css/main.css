@@ -14,11 +14,20 @@ header .table {width: 100%;}
 header .td {vertical-align: middle;}
 header .td:first-child {width: 100%; font-size: 35px; line-height: 0.9; font-weight: bold;}
 
-nav {display: none;}
+.menu-cont {position: relative;}
+/*.menu-cont:hover nav {display: block;}*/
+nav {display: none; position: absolute; right: -12px; top: -12px; white-space: nowrap; box-shadow: 4px 4px 20px #C0C0C0; background-color: #FDFDFD; border-radius: 3px; z-index: 5;}
+nav ul {list-style: none;}
+nav li {font-size: 20px; display: block;}
+nav li:first-child {font-size: 26px;}
+nav li:hover {background-color: #EEE;}
+nav a {padding: 8px 15px; text-decoration: none; color: #000; display: block;}
 
 article {height: 100%;}
 
 footer > .margin {margin-bottom: 20px;}
+
+#overlay {display: none; background-color:transparent; position: fixed; top: 0; left: 0; right: 0; bottom: 0;}
 
 .clear {clear: both;}
 .margin {margin: 10px 0;}
