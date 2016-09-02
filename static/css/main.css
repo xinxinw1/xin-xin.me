@@ -1,0 +1,33 @@
+* {margin: 0; padding: 0; border: 0;}
+
+html {box-sizing: border-box;}
+*, *:before, *:after {box-sizing: inherit;}
+
+body {color: #000; text-align: left; font: 16px 'Raleway', cursive; line-height: 1.5;}
+
+#outer {box-sizing: content-box; max-width: 800px; margin: auto; min-height: 100%; padding: 0 20px;}
+#outer > .table {box-sizing: border-box; min-height: 100%;}
+
+header {border-bottom: 1px solid #777;}
+header > .margin {margin-top: 20px; margin-bottom: 18px;}
+header .table {width: 100%;}
+header .td {vertical-align: middle;}
+header .td:first-child {width: 100%; font-size: 35px; line-height: 0.9; font-weight: bold;}
+
+nav {display: none;}
+
+article {height: 100%;}
+
+footer > .margin {margin-bottom: 20px;}
+
+.clear {clear: both;}
+.margin {margin: 10px 0;}
+
+h1, p {margin: 10px 0;}
+a {color: #005EC8;}
+
+h1 {font-size: 26px;}
+
+.table {display: table;}
+.tr {display: table-row; vertical-align: top;}
+.td {display: table-cell; vertical-align: top;}

@@ -1,0 +1,24 @@
+{
+  "name": "xin-xin.me",
+  "version": "1.0.0",
+  "description": "Xin-Xin's place",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/xinxinw1/xin-xin.me.git"
+  },
+  "author": "Xin-Xin Wang",
+  "license": "CC-BY-ND-4.0",
+  "bugs": {
+    "url": "https://github.com/xinxinw1/xin-xin.me/issues"
+  },
+  "homepage": "https://github.com/xinxinw1/xin-xin.me#readme",
+  "dependencies": {
+    "express": "^4.14.0",
+    "pug": "^2.0.0-beta6"
+  }
+}
