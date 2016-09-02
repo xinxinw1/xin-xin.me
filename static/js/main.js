@@ -15,7 +15,7 @@ function closeNav(){
 };
 
 window.onload = function (){
-  $("menu-link").onclick = function (){
+  $("nav-link").onclick = function (){
     openNav();
     return false;
   };
