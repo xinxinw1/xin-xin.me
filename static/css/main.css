@@ -3,14 +3,13 @@
 html {box-sizing: border-box; height: 100%;}
 *, *:before, *:after {box-sizing: inherit;}
 
-body {height: 100%; color: #000; text-align: left; font: 16px 'Raleway', cursive; line-height: 1.5;}
+body {height: 100%; color: #000; text-align: left; font: 16px 'Raleway', sans-serif; line-height: 1.5;}
 
 /* General Design */
 
 #outer {box-sizing: content-box; max-width: 800px; margin: auto; min-height: 100%; padding: 0 20px; height: 100%; display: flex; flex-flow: column;}
 
-header {border-bottom: 1px solid #777; white-space: nowrap;}
-header > .margin {margin-top: 16px; margin-bottom: 12px;}
+header {border-bottom: 1px solid #777; white-space: nowrap; padding-top: 16px; padding-bottom: 12px;}
 header .table {width: 100%;}
 header .td {vertical-align: middle;}
 header .td:first-child {width: 100%; font-size: 35px; line-height: 40px; font-weight: bold;}
@@ -31,28 +30,43 @@ header a {text-decoration: none; color: #000; -webkit-tap-highlight-color: trans
 #nav-drop a:hover, #nav-drop a:active {background-color: #EEE;}
 #nav-link {padding-left: 15px;}
 
-article {flex: 1 0 auto;}
+article {flex: 1 0 auto; padding: 10px 0;}
 
-footer {font-size: 14px; opacity: 0.4;}
-footer > .margin {margin-bottom: 20px;}
+footer {font-size: 14px; opacity: 0.4; padding-top: 10px; padding-bottom: 20px;}
 
 #overlay {display: none; background-color:transparent; position: fixed; top: 0; left: 0; right: 0; bottom: 0;}
 
+article > *:first-child, footer > *:first-child, .container > *:first-child {margin-top: 0;}
+
 /* General Text and Layout */
 
-.clear {clear: both;}
-.margin {margin: 10px 0;}
-
-h1, p, hr {margin: 10px 0;}
+h1, p, hr {margin-top: 10px;}
 a {color: #005EC8;}
 
 h1 {font-size: 26px;}
 
 hr {height: 1px; color: #777; background-color: #777; margin: 16px 0;}
 
+input, textarea, select {border: 1px solid #000; width: 100%; font: 16px 'Raleway', cursive; box-sizing: border-box;}
+input[type="text"], input[type="password"], textarea {padding: 10px 10px;}
+input[type="submit"], input[type="reset"], input[type="button"] {padding: 5px 15px; background-color: #1BA72A; color: #FFF; width: auto;}
+input[type="button"] {position: absolute; bottom: 0px; right: -4px;}
+textarea {min-height: 100px; resize: vertical;}
+
 .table {display: table;}
 .tr {display: table-row; vertical-align: top;}
 .td {display: table-cell; vertical-align: top;}
+
+.flexbox {display: flex; flex-flow: column;}
+.flex {flex: 1 0 auto;}
+
+.fillh {height: 100%;}
+
+.element {margin-top: 10px; display: block;}
+
+.form input[type="text"], .form input[type="password"], .form textarea
+  {display: block; margin-top: 10px;}
+.form textarea {resize: vertical;}
 
 /* Special Media */
 

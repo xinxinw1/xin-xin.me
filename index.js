@@ -7,15 +7,19 @@ app.set('views', './views')
 app.set('view engine', 'pug');
 
 app.get('/', function (req, res) {
-  res.render('index', { title: 'Hey', message: 'Hello there!'});
+  res.render('index');
 });
 
 app.get('/empty', function (req, res) {
-  res.render('empty', { title: 'Empty', message: 'Hello there!'});
+  res.render('empty');
 });
 
 app.get('/code', function (req, res) {
-  res.render('code', { title: 'Code', message: 'Hello there!'});
+  res.render('code');
+});
+
+app.get('/contact', function (req, res) {
+  res.render('contact');
 });
 
 app.use(express.static('./static'));

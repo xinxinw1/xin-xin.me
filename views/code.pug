@@ -1,5 +1,8 @@
 extends layout.pug
 
+block vars
+  - title="Code"
+
 mixin program(name, link, source, desc)
   p.code-title #[a(href=link) #{name}] (#[a(href=source) source code])
   p.code-desc= desc

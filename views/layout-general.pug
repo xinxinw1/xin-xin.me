@@ -1,5 +1,6 @@
 doctype html
-html(lang="en")
+block vars
+html(lang="en", id=pageid)
   head
     block title
     meta(name="viewport", content="width=device-width, initial-scale=1.0")
@@ -10,29 +11,26 @@ html(lang="en")
   body
     #outer
       header
-        .margin
-          .table
-            .td: a(href="/") Xin-Xin Wang
-            nav.td
-              ul#nav-hori
+        .table
+          .td: a(href="/") Xin-Xin Wang
+          nav.td
+            ul#nav-hori
+              li: a(href="/code") Code
+              li: a(href="/math") Math
+              li: a(href="/music") Music
+              li: a(href="/contact") Contact
+            #nav-drop-cont
+              ul#nav-drop
                 li: a(href="/code") Code
                 li: a(href="/math") Math
                 li: a(href="/music") Music
                 li: a(href="/contact") Contact
-              #nav-drop-cont
-                ul#nav-drop
-                  li: a(href="/code") Code
-                  li: a(href="/math") Math
-                  li: a(href="/music") Music
-                  li: a(href="/contact") Contact
-                a#nav-link(href="#")
-                  img(src="/img/menu.png", width="26", height="26", alt="Menu")
-           
-      article
-        .margin
+              a#nav-link(href="#")
+                img(src="/img/menu.png", width="26", height="26", alt="Menu")
+      block article
+        article
           block content
       footer
-        .margin
-          p &copy; 2016 Xin-Xin Wang
-          p This website is #[a(href="https://github.com/xinxinw1/xin-xin.me") open source]!
+        p &copy; 2016 Xin-Xin Wang
+        p This website is #[a(href="https://github.com/xinxinw1/xin-xin.me") open source]!
     #overlay
