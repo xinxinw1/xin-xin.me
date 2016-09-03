@@ -10,6 +10,10 @@ app.get('/', function (req, res) {
   res.render('index', { title: 'Hey', message: 'Hello there!'});
 });
 
+app.get('/empty', function (req, res) {
+  res.render('empty', { title: 'Empty', message: 'Hello there!'});
+});
+
 app.get('/code', function (req, res) {
   res.render('code', { title: 'Code', message: 'Hello there!'});
 });

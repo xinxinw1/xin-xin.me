@@ -1,3 +1,4 @@
+doctype html
 html
   head
     block title
@@ -8,33 +9,30 @@ html
     block head
   body
     #outer
-      .table
-        .tr
-          header.td
-            .margin
-              .table
-                .td Xin-Xin Wang
-                nav.td
-                  ul#nav-hori
-                    li: a(href="#") Code
-                    li: a(href="#") Math
-                    li: a(href="#") Music
-                    li: a(href="#") Contact
-                  #nav-drop-cont
-                    ul#nav-drop
-                      li: a(href="#") Code
-                      li: a(href="#") Math
-                      li: a(href="#") Music
-                      li: a(href="#") Contact
-                    a#nav-link(href="#")
-                      img(src="/img/menu.png", width="26", height="26")
-        .tr
-          article.td
-            .margin
-              block content
-        .tr
-          footer.td
-            .margin
-              p &copy; 2016 Xin-Xin Wang
-              p This website is #[a(href="https://github.com/xinxinw1/xin-xin.me") open source]!
+      header
+        .margin
+          .table
+            .td Xin-Xin Wang
+            nav.td
+              ul#nav-hori
+                li: a(href="#") Code
+                li: a(href="#") Math
+                li: a(href="#") Music
+                li: a(href="#") Contact
+              #nav-drop-cont
+                ul#nav-drop
+                  li: a(href="#") Code
+                  li: a(href="#") Math
+                  li: a(href="#") Music
+                  li: a(href="#") Contact
+                a#nav-link(href="#")
+                  img(src="/img/menu.png", width="26", height="26")
+           
+      article
+        .margin
+          block content
+      footer
+        .margin
+          p &copy; 2016 Xin-Xin Wang
+          p This website is #[a(href="https://github.com/xinxinw1/xin-xin.me") open source]!
     #overlay

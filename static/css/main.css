@@ -1,14 +1,13 @@
 * {margin: 0; padding: 0; border: 0; outline: 0;}
 
-html {box-sizing: border-box;}
+html {box-sizing: border-box; height: 100%;}
 *, *:before, *:after {box-sizing: inherit;}
 
-body {color: #000; text-align: left; font: 16px 'Raleway', cursive; line-height: 1.5;}
+body {height: 100%; color: #000; text-align: left; font: 16px 'Raleway', cursive; line-height: 1.5;}
 
 /* General Design */
 
-#outer {box-sizing: content-box; max-width: 800px; margin: auto; min-height: 100%; padding: 0 20px;}
-#outer > .table {box-sizing: border-box; min-height: 100%;}
+#outer {box-sizing: content-box; max-width: 800px; margin: auto; min-height: 100%; padding: 0 20px; height: 100%; display: flex; flex-flow: column;}
 
 header {border-bottom: 1px solid #777; white-space: nowrap;}
 header > .margin {margin-top: 16px; margin-bottom: 12px;}
@@ -32,7 +31,7 @@ nav a {-webkit-tap-highlight-color: transparent;}
 #nav-drop a:hover, #nav-drop a:active {background-color: #EEE;}
 #nav-link {padding-left: 15px;}
 
-article {height: 100%;}
+article {flex: 1 0 auto;}
 
 footer > .margin {margin-bottom: 20px;}
 
