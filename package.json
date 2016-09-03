@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node index.js"
+    "start": "if [ -f ./email-config ]; then source ./email-config; fi; node index.js"
   },
   "repository": {
     "type": "git",
@@ -18,7 +18,9 @@
   },
   "homepage": "https://github.com/xinxinw1/xin-xin.me#readme",
   "dependencies": {
+    "body-parser": "^1.15.2",
     "express": "^4.14.0",
+    "nodemailer": "^2.5.0",
     "pug": "^2.0.0-beta6"
   }
 }

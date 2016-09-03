@@ -8,8 +8,11 @@ block article
     h1 #{title}
     
     form.form.flex.flexbox(action="/contact", method="POST")
-      input(type="text", placeholder="Name")
-      input(type="text", placeholder="Email")
-      input(type="text", placeholder="Subject")
-      textarea.flex(placeholder="Your Message")
-      p: input(type="submit", value="Send")
+      input(type="text", name="name", placeholder="Name", value=orig?orig.name:'')
+      input(type="text", name="email", placeholder="Email", value=orig?orig.email:'')
+      input(type="text", name="subject", placeholder="Subject", value=orig?orig.subject:'')
+      textarea.flex(name="message", placeholder="Your Message")= orig?orig.message:''
+      p(class=error?'what':'')
+        input(type="submit", value="Send")
+        if message
+          span= message

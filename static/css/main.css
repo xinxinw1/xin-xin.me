@@ -50,7 +50,6 @@ hr {height: 1px; color: #777; background-color: #777; margin: 16px 0;}
 input, textarea, select {border: 1px solid #000; width: 100%; font: 16px 'Raleway', cursive; box-sizing: border-box;}
 input[type="text"], input[type="password"], textarea {padding: 10px 10px;}
 input[type="submit"], input[type="reset"], input[type="button"] {padding: 5px 15px; background-color: #1BA72A; color: #FFF; width: auto;}
-input[type="button"] {position: absolute; bottom: 0px; right: -4px;}
 textarea {min-height: 100px; resize: vertical;}
 
 .table {display: table;}
@@ -67,6 +66,10 @@ textarea {min-height: 100px; resize: vertical;}
 .form input[type="text"], .form input[type="password"], .form textarea
   {display: block; margin-top: 10px;}
 .form textarea {resize: vertical;}
+.form p input[type="submit"], .form p input[type="reset"], .form p input[type="button"]
+  {margin-right: 10px;}
+  
+.what {color: #FF0000; font-weight: bold;}
 
 /* Special Media */
 
