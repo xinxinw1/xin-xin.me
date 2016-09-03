@@ -15,24 +15,25 @@ header .table {width: 100%;}
 header .td {vertical-align: middle;}
 header .td:first-child {width: 100%; font-size: 35px; line-height: 40px; font-weight: bold;}
 
-nav a {-webkit-tap-highlight-color: transparent;}
+header a {text-decoration: none; color: #000; -webkit-tap-highlight-color: transparent;}
 
 #nav-hori, #nav-link img {vertical-align: middle;}
 #nav-hori {list-style: none; display: none;}
 #nav-hori li {display: inline-block;}
-#nav-hori a {display: inline-block; text-decoration: none; color: #000; padding: 0 15px; line-height: 40px; font-size: 20px;}
+#nav-hori a {display: inline-block; padding: 0 15px; line-height: 40px; font-size: 20px;}
 #nav-hori a:hover, #nav-hori a:active {background-color: #EEE;}
 
 #nav-drop-cont {position: relative; display: inline-block;}
 #nav-drop {display: none; position: absolute; right: 0px; top: -8px; box-shadow: 4px 4px 20px #C0C0C0; background-color: #FDFDFD; border-radius: 3px; z-index: 5; list-style: none;}
 #nav-drop li {display: block;}
-#nav-drop a {display: block; font-size: 20px; padding: 8px 15px; text-decoration: none; color: #000;}
+#nav-drop a {display: block; font-size: 20px; padding: 8px 15px;}
 /*nav-drop li:first-child a {font-size: 26px;}*/
 #nav-drop a:hover, #nav-drop a:active {background-color: #EEE;}
 #nav-link {padding-left: 15px;}
 
 article {flex: 1 0 auto;}
 
+footer {font-size: 14px; opacity: 0.4;}
 footer > .margin {margin-bottom: 20px;}
 
 #overlay {display: none; background-color:transparent; position: fixed; top: 0; left: 0; right: 0; bottom: 0;}
