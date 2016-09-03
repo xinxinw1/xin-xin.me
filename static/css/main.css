@@ -1,9 +1,11 @@
-* {margin: 0; padding: 0; border: 0;}
+* {margin: 0; padding: 0; border: 0; outline: 0;}
 
 html {box-sizing: border-box;}
 *, *:before, *:after {box-sizing: inherit;}
 
 body {color: #000; text-align: left; font: 16px 'Raleway', cursive; line-height: 1.5;}
+
+/* General Design */
 
 #outer {box-sizing: content-box; max-width: 800px; margin: auto; min-height: 100%; padding: 0 20px;}
 #outer > .table {box-sizing: border-box; min-height: 100%;}
@@ -17,9 +19,9 @@ header .td:first-child {width: 100%; font-size: 35px; line-height: 40px; font-we
 nav a {-webkit-tap-highlight-color: transparent;}
 
 #nav-hori, #nav-link img {vertical-align: middle;}
-#nav-hori {list-style: none; display: none; line-height: 40px;}
+#nav-hori {list-style: none; display: none;}
 #nav-hori li {display: inline-block;}
-#nav-hori a {display: inline-block; text-decoration: none; color: #000; padding: 0 15px; font-size: 20px;}
+#nav-hori a {display: inline-block; text-decoration: none; color: #000; padding: 0 15px; line-height: 40px; font-size: 20px;}
 #nav-hori a:hover, #nav-hori a:active {background-color: #EEE;}
 
 #nav-drop-cont {position: relative; display: inline-block;}
@@ -30,29 +32,34 @@ nav a {-webkit-tap-highlight-color: transparent;}
 #nav-drop a:hover, #nav-drop a:active {background-color: #EEE;}
 #nav-link {padding-left: 15px;}
 
-@media screen and (min-width: 635px) {
-  #nav-drop-cont {display: none;}
-  #nav-hori {display: inline-block;}
-}
-
 article {height: 100%;}
 
 footer > .margin {margin-bottom: 20px;}
 
 #overlay {display: none; background-color:transparent; position: fixed; top: 0; left: 0; right: 0; bottom: 0;}
 
+/* General Text and Layout */
+
 .clear {clear: both;}
 .margin {margin: 10px 0;}
 
-h1, p {margin: 10px 0;}
+h1, p, hr {margin: 10px 0;}
 a {color: #005EC8;}
 
 h1 {font-size: 26px;}
+
+hr {height: 1px; color: #777; background-color: #777; margin: 16px 0;}
 
 .table {display: table;}
 .tr {display: table-row; vertical-align: top;}
 .td {display: table-cell; vertical-align: top;}
 
+/* Special Media */
+
+@media screen and (min-width: 635px) {
+  #nav-drop-cont {display: none;}
+  #nav-hori {display: inline-block;}
+}
 
 @media print {
   #outer {padding: 0;}
@@ -61,3 +68,8 @@ h1 {font-size: 26px;}
   #nav-drop-cont {display: none;}
   #nav-hori {display: none;}
 }
+
+/* Specific Page CSS */
+
+.code-title {font-weight: bold; margin-bottom: 0;}
+.code-desc {margin-top: 0;}

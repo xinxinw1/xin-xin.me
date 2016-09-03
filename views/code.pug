@@ -1,0 +1,17 @@
+extends layout.pug
+
+mixin program(name, link, source, desc)
+  p.code-title #[a(href=link) #{name}] (#[a(href=source) source code])
+  p.code-desc= desc
+
+block content
+  h1 Code
+  
+  p Here are some free programs I have made that might help you. You can edit, improve, and repost these as much as you like. They are in the public domain unless stated otherwise.
+  
+  hr
+  
+  p My Github page is at #[a(href="https://github.com/xinxinw1") https://github.com/xinxinw1].
+  
+  +program('Complex Number Calculator', '/codes/calc/', 'https://github.com/xinxinw1/calc',
+    'An arbitrary precision calculator that handles complex numbers.')
