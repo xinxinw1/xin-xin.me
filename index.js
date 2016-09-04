@@ -57,6 +57,7 @@ app.post('/contact', function (req, res) {
 app.use(express.static('./static'));
 
 app.use(function (req, res){
+  console.log("404 Page Not Found: " + req.method + " " + req.url);
   res.status(404);
   res.render('404');
 });
