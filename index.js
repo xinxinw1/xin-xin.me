@@ -56,6 +56,11 @@ app.post('/contact', function (req, res) {
 
 app.use(express.static('./static'));
 
+app.use(function (req, res){
+  res.status(404);
+  res.render('404');
+});
+
 app.listen(app.get('port'), function () {
   console.log('Listening on port ' + app.get('port') + '!');
 });
