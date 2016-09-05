@@ -3,10 +3,18 @@ var app = express();
 var bodyParser = require('body-parser');
 var nodemailer = require('nodemailer');
 
-app.set('email_host', process.env.EMAIL_HOST);
-app.set('email_from', process.env.EMAIL_FROM);
-app.set('email_pass', process.env.EMAIL_PASS);
-app.set('email_to', process.env.EMAIL_TO);
+try {
+  var emailConfig = require('./email-config.json');
+  app.set('email_host', emailConfig.host);
+  app.set('email_from', emailConfig.from);
+  app.set('email_pass', emailConfig.pass);
+  app.set('email_to', emailConfig.to);
+} catch (e){
+  app.set('email_host', process.env.EMAIL_HOST);
+  app.set('email_from', process.env.EMAIL_FROM);
+  app.set('email_pass', process.env.EMAIL_PASS);
+  app.set('email_to', process.env.EMAIL_TO);
+}
 
 if (app.get('email_host') && app.get('email_from') && app.get('email_pass')){
   var smtpConfig = {
@@ -75,9 +83,13 @@ app.use(function (req, res){
   res.render('404');
 });
 
-app.listen(app.get('port'), function () {
-  console.log('Listening on port ' + app.get('port') + '!');
-});
+if (require.main === module){
+  app.listen(app.get('port'), function () {
+    console.log('Listening on port ' + app.get('port') + '!');
+  });
+} else {
+  module.exports = app;
+}
 
 function sendContact(obj, cb){
   if (!transporter || !app.get('email_to')){
