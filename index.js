@@ -33,7 +33,7 @@ if (app.get('email_host') && app.get('email_from') && app.get('email_pass')){
 
 app.set('port', (process.env.PORT || 8080));
 
-app.set('views', './views')
+app.set('views', __dirname + '/views')
 app.set('view engine', 'pug');
 
 app.get('/', function (req, res) {
@@ -75,7 +75,7 @@ app.post('/contact', function (req, res) {
   });
 });
 
-app.use(express.static('./static'));
+app.use(express.static(__dirname + '/static'));
 
 app.use(function (req, res){
   console.log("404 Page Not Found: " + req.method + " " + req.url);
