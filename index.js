@@ -44,6 +44,19 @@ for (var i = 0; i < pages.length; i++){
   routePage(pages[i]);
 }
 
+function constructionPage(page, title){
+  app.get('/' + page, function (req, res) {
+    console.log('Construction page: /' + page + ' ' + title);
+    res.render('construction', {title: title});
+  });
+}
+
+var constructions = [['music', "Music"]];
+
+for (var i = 0; i < constructions.length; i++){
+  constructionPage(constructions[i][0], constructions[i][1]);
+}
+
 app.use(bodyParser.urlencoded({ extended: true }));
 
 app.post('/contact', function (req, res) {
