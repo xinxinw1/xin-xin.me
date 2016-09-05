@@ -1,0 +1,24 @@
+[submodule "static/codes/calc"]
+	path = static/codes/calc
+	url = https://github.com/xinxinw1/calc
+[submodule "static/codes/lisp-repl"]
+	path = static/codes/lisp-repl
+	url = https://github.com/xinxinw1/lisp-repl
+[submodule "static/codes/sigfig"]
+	path = static/codes/sigfig
+	url = https://github.com/xinxinw1/sigfig
+[submodule "static/codes/factor"]
+	path = static/codes/factor
+	url = https://github.com/xinxinw1/factor
+[submodule "static/codes/cont-frac"]
+	path = static/codes/cont-frac
+	url = https://github.com/xinxinw1/cont-frac
+[submodule "static/codes/frac-dec"]
+	path = static/codes/frac-dec
+	url = https://github.com/xinxinw1/frac-dec
+[submodule "static/codes/progress-bar"]
+	path = static/codes/progress-bar
+	url = https://github.com/xinxinw1/progress-bar
+[submodule "static/codes/day-month-year"]
+	path = static/codes/day-month-year
+	url = https://github.com/xinxinw1/day-month-year
