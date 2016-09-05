@@ -32,17 +32,17 @@ app.get('/', function (req, res) {
   res.render('index');
 });
 
-app.get('/empty', function (req, res) {
-  res.render('empty');
-});
+function routePage(page){
+  app.get('/' + page, function (req, res) {
+    res.render(page);
+  });
+}
 
-app.get('/code', function (req, res) {
-  res.render('code');
-});
+var pages = ['empty', 'code', 'contact', 'math'];
 
-app.get('/contact', function (req, res) {
-  res.render('contact');
-});
+for (var i = 0; i < pages.length; i++){
+  routePage(pages[i]);
+}
 
 app.use(bodyParser.urlencoded({ extended: true }));
 

@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Denesting sqrt(x+sqrt(y))</title>
+  <meta charset="UTF-8">
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]},
+      displayAlign: "left"
+    });
+  </script>
+  <script type="text/javascript"
+    src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_HTMLorMML">
+  </script>
+  <link rel="stylesheet" type="text/css" href="math-papers.css">
+</head>
+
+<body>
+<div style="display: none">
+\(
+\def \l {\left}
+\def \r {\right}
+\def \f {\frac}
+
+\def \b#1{\l(#1\r)}
+
+\def \root [#1]#2{\sqrt[\leftroot{2}\uproot{2}\scriptstyle #1]{#2}}
+
+\def \stag#1{\quad (#1)}
+
+\DeclareMathOperator{\acoth}{acoth}
+\)
+</div>
+
+<h1>Denesting $\sqrt{x\pm\sqrt{y}}$</h1>
+<p class="date">Pub: Sep. 14, 2014 | Wri: a few years ago</p>
+<hr class="titlehr">
+
+\[
+
+\begin{split}
+& \sqrt{x+\sqrt{y}} \\
+& \begin{split}
+  \! = \; & \sqrt{a}+\sqrt{b} \\
+  \! = \; & \sqrt{(\sqrt{a}+\sqrt{b})^2} \\
+  \! = \; & \sqrt{a+2\sqrt{ab}+b} \\
+  \! = \; & \sqrt{a+b+\sqrt{4ab}}
+  \end{split} \\
+\end{split}
+\qquad
+\begin{split}
+& \sqrt{x-\sqrt{y}} \\
+& \begin{split}
+  \! = \; & \sqrt{a}-\sqrt{b} \\
+  \! = \; & \sqrt{(\sqrt{a}-\sqrt{b})^2} \\
+  \! = \; & \sqrt{a-2\sqrt{ab}+b} \\
+  \! = \; & \sqrt{a+b-\sqrt{4ab}}
+  \end{split} \\
+\end{split} \\[48pt]
+
+x = a + b \stag{1}
+\qquad
+y = 4ab \stag{2} \\[6pt]
+
+b = x-a \stag{3} \\[6pt]
+
+(3) \longrightarrow (2) \\[6pt]
+
+\begin{split}
+y &= 4a(x-a) \\[3pt]
+  &= 4ax - 4a^2
+\end{split} \\[15pt]
+
+4a^2 - 4ax + y = 0 \\[3pt]
+
+a^2 - ax + \f{1}{4}y = 0 \\[3pt]
+
+a = \f{x \pm \sqrt{x^2-y}}{2} \\[3pt]
+
+\begin{split}
+b &= x-a \\[3pt]
+  &= \f{2x - \b{x \pm \sqrt{x^2-y}}}{2} \\[3pt]
+  &= \f{x \mp \sqrt{x^2-y}}{2}
+\end{split} \\[42pt]
+
+a = \f{x+\sqrt{x^2-y}}{2}
+\qquad
+b = \f{x-\sqrt{x^2-y}}{2} \\[12pt]
+
+\sqrt{x\pm\sqrt{y}}
+  = \sqrt{\f{x+\sqrt{x^2-y}}{2}} \pm \sqrt{\f{x-\sqrt{x^2-y}}{2}}
+
+\]
+</body>
+
+</html>

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Square Root of Any Complex Number</title>
+  <meta charset="UTF-8">
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]},
+      displayAlign: "left"
+    });
+  </script>
+  <script type="text/javascript"
+    src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_HTMLorMML">
+  </script>
+  <link rel="stylesheet" type="text/css" href="math-papers.css">
+</head>
+
+<body>
+<div style="display: none">
+\(
+\def \l {\left}
+\def \r {\right}
+\def \f {\frac}
+
+\def \b#1{\l(#1\r)}
+
+\def \root [#1]#2{\sqrt[\leftroot{2}\uproot{2}\scriptstyle #1]{#2}}
+\def \sroot [#1]#2{\sqrt[\large #1]{#2}}
+
+\def \cbrt #1{\root[3]{#1}}
+\def \scbrt #1{\sroot[3]{#1}}
+
+\def \p {\phantom}
+
+\def \stag#1{\quad (#1)}
+
+\def \box#1{\boxed{\displaystyle{#1}}}
+
+\def \und#1{\style{text-decoration: underline}{#1}}
+\def \link#1#2{\und{\href{#1}{#2}}}
+\def \tlink#1#2{\link{#1}{\text{#2}}}
+
+\DeclareMathOperator{\acoth}{acoth}
+\)
+</div>
+
+<h1>Square Root of Any Complex Number</h1>
+<p class="date">Pub: Sep. 14, 2014 | Wri: a few years ago</p>
+<hr class="titlehr">
+
+\[
+
+\sqrt{x \pm yi} \\[6pt]
+= \sqrt{x \pm \sqrt{-y^2}} \\[12pt]
+
+\begin{split}
+a, b &= \f{x \pm \sqrt{x^2 - (-y^2)}}{2} \qquad\qquad
+          \text{(Using }
+          \tlink{denest-sqrt.html}{Denesting $\sqrt{x\pm\sqrt{y}}$}
+          \text{)}  \\[3pt]
+     &= \f{x \pm \sqrt{x^2 + y^2}}{2}
+\end{split} \\[30pt]
+
+\begin{split}
+\sqrt{x \pm yi}
+&= \sqrt{\f{x + \sqrt{x^2 + y^2}}{2}} \pm
+   \sqrt{\f{x - \sqrt{x^2 + y^2}}{2}}   \\[6pt]
+&= \sqrt{\f{x + \sqrt{x^2 + y^2}}{2}} \pm \sqrt{\f{-x + \sqrt{x^2 + y^2}}{2}}i
+\end{split}
+
+\]
+
+<hr>
+<h2>Square Root of $\pm i$</h2>
+
+\[
+
+\sqrt{\pm i} \\[6pt]
+= \sqrt{0 \pm 1i} \\[6pt]
+= \sqrt{\f{0 + \sqrt{0 + 1}}{2}} \pm \sqrt{\f{-0 + \sqrt{0 + 1}}{2}}i \\[12pt]
+= \sqrt{\f{1}{2}} \pm \sqrt{\f{1}{2}}i \\[12pt]
+= \f{1}{\sqrt{2}} \pm \f{1}{\sqrt{2}}i \\[12pt]
+= \f{\sqrt{2}}{2} \pm \f{\sqrt{2}}{2}i \\[12pt]
+
+\]
+</body>
+
+</html>

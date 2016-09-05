@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Converting ax^3+bx^2+cx+d to t^3+pt+q</title>
+  <meta charset="UTF-8">
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]},
+      displayAlign: "left"
+    });
+  </script>
+  <script type="text/javascript"
+    src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_HTMLorMML">
+  </script>
+  <link rel="stylesheet" type="text/css" href="math-papers.css">
+</head>
+
+<body>
+<h1>Converting $ax^3+bx^2+cx+d$ to $t^3+pt+q$</h1>
+<p class="date">Pub: Sep. 13, 2014 | Wri: a few years ago</p>
+<hr class="titlehr">
+\[
+\def \l {\left}
+\def \r {\right}
+\def \f {\frac}
+
+ax^3+bx^2+cx+d = 0 \\
+
+\def \x {t-\f{b}{3a}}
+\text{Let } x = \x \\
+
+\def \bx {\l(\x\r)}
+a\bx^3 + b\bx^2 + c\bx + d = 0 \\
+
+a\l(t^3-\f{b}{a}t^2+\f{b^2}{3a^2}t-\f{b^3}{27a^3}\r)
++ b\l(t^2-\f{2b}{3a}t+\f{b^2}{9a^2}\r)
++ c\l(t-\f{b}{3a}\r) + d = 0 \\
+
+t^3-\f{b}{a}t^2+\f{b^2}{3a^2}t-\f{b^3}{27a^3}
++ \f{b}{a}t^2-\f{2b^2}{3a^2}t+\f{b^3}{9a^3}
++ \f{c}{a}t-\f{bc}{3a^2} + \f{d}{a} = 0 \\
+
+t^3+\f{b^2}{3a^2}t-\f{2b^2}{3a^2}t+\f{c}{a}t
+- \f{b^3}{27a^3}+\f{b^3}{9a^3}-\f{bc}{3a^2}+\f{d}{a} = 0 \\
+
+t^3+\l(\f{3ac-b^2}{3a^2}\r)t-\f{b^3}{27a^3}+\f{3b^3}{27a^3}
+- \f{9abc}{27a^3}+\f{27a^2d}{27a^3} = 0 \\
+
+t^3+\l(\f{3ac-b^2}{3a^2}\r)t-\l(\f{2b^3-9abc+27a^2d}{27a^3}\r) = 0 \\
+
+t^3+pt+q = 0 \\
+
+\begin{split}
+p\, & = \f{3ac-b^2}{3a^2} \\
+    & = \f{c}{a}-\f{b}{a}\l(\f{b}{3a}\r)
+\end{split}
+\qquad
+\begin{split}
+q\, & = \f{2b^3-9abc+27a^2d}{27a^3} \\[3pt]
+    & = 2\l(\f{b}{3a}\r)^3 - \f{c}{a}\l(\f{b}{3a}\r) + \f{d}{a}
+\end{split} \\~\\[3pt]
+
+\text{If $a = 1$, } \\[9pt]
+
+\begin{split}
+p\, & = \f{3c-b^2}{3} \\
+    & = c-b\l(\f{b}{3}\r)
+\end{split}
+\qquad
+\begin{split}
+q\, & = \f{2b^3-9bc+27d}{27} \\[3pt]
+    & = 2\l(\f{b}{3}\r)^3 - c\l(\f{b}{3}\r) + d
+\end{split}
+
+\]
+</body>
+
+</html>

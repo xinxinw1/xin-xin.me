@@ -71,6 +71,8 @@ textarea {min-height: 100px; resize: vertical;}
   
 .what {color: #FF0000; font-weight: bold;}
 
+.hidden {display: none;}
+
 /* Special Media */
 
 @media screen and (min-width: 635px) {

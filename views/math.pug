@@ -1,0 +1,64 @@
+extends layout.pug
+
+block vars
+  - title="Math"
+  
+block head
+  script(type="text/x-mathjax-config").
+    MathJax.Hub.Config({
+      tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]},
+      displayAlign: "left"
+    });
+    MathJax.Hub.Register.StartupHook("TeX Jax Ready",function () {
+      var TEX = MathJax.InputJax.TeX;
+      var PREFILTER = TEX.prefilterMath;
+      TEX.Augment({
+        prefilterMath: function (math,displaymode,script) {
+          math = "\\displaystyle{"+math+"}";
+          return PREFILTER.call(TEX,math,displaymode,script);
+        }
+      });
+    });
+  script(src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML")
+
+mixin program(name, link, source, desc)
+  p.code-title #[a(href=link) #{name}] (#[a(href=source) source code])
+  p.code-desc= desc
+
+block content
+  h1 Math
+  
+  div.hidden.
+    \(
+    \def \l {\left}
+    \def \r {\right}
+    \def \f {\frac}
+    
+    \def \b#1{\l(#1\r)}
+    
+    \def \root [#1]#2{\sqrt[\leftroot{2}\uproot{2}\scriptstyle #1]{#2}}
+    \def \sroot [#1]#2{\sqrt[\large #1]{#2}}
+    
+    \def \cbrt #1{\root[3]{#1}}
+    \def \scbrt #1{\sroot[3]{#1}}
+    
+    \DeclareMathOperator{\acoth}{acoth}
+    \)
+  
+  p Here are some papers documenting derivations for things I've found online. In other words, I didn't come up with the original idea for these:
+  
+  p: a(href="/papers/depress-cubic.html") Converting $ax^3+bx^2+cx+d$ to $t^3+pt+q$
+  p: a(href="/papers/cubic-formula1.html") Cubic Formula Part 1
+  p: a(href="/papers/cubic-formula2.html") Cubic Formula Part 2
+  
+  hr
+  
+  p Here are some things I've derived myself (but which many other people have probably derived before):
+  
+  p: a(href="/papers/sum-acoth-i.html") Show that $\sum\limits_{i=2}^n \acoth i = \f{1}{2} \ln \f{n(n+1)}{2}$
+  p: a(href="/papers/denest-sqrt.html") Denesting $\sqrt{x\pm\sqrt{y}}$
+  p: a(href="/papers/other-cube-roots.html") Find Other $\scbrt{a}$ from Known $\scbrt{a}$
+  p: a(href="/papers/sqrt-complex.html") Square Root of Any Complex Number
+  p: a(href="/papers/odds.html") What are the odds?
+  
+  

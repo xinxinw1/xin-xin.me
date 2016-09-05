@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>What are the odds?</title>
+  <meta charset="UTF-8">
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]},
+      displayAlign: "left"
+    });
+  </script>
+  <script type="text/javascript"
+    src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_HTMLorMML">
+  </script>
+  <link rel="stylesheet" type="text/css" href="math-papers.css">
+</head>
+
+<body>
+<div style="display: none">
+\(
+\def \l {\left}
+\def \r {\right}
+\def \f {\frac}
+
+\def \b#1{\l(#1\r)}
+
+\def \root [#1]#2{\sqrt[\leftroot{2}\uproot{2}\scriptstyle #1]{#2}}
+
+\DeclareMathOperator{\acoth}{acoth}
+\)
+</div>
+
+<h1>What are the odds?</h1>
+<p class="date">Pub: Oct. 11, 2014 | Wri: Oct. 11, 2014</p>
+<hr class="titlehr">
+<p>There is a game called "What are the odds?" which goes like this: One person dares another person to do something, that person picks a probability $1$ in $n$ they will do it, and they both say a random number between $1$ and $n$ inclusive at the same time. If the two numbers are equal, then the person has to do the dare.</p>
+
+<p>For example:</p>
+
+<p class="conv">Mark: What are the odds you drink this disgusting mixture of milk and apple juice?<br>
+John: One in thirty.<br>
+Mark: 1... 2... 3...<br>
+*both shout 15* <br>
+*John drinks the mixture*</p>
+
+<p>What I want to find out is, is the game mathematically correct? What is the probability that the two numbers are equal?</p>
+
+<p>The first person has $n$ choices and the second person has $n$ choices, giving $n^2$ possible pairings. The pairs where the two numbers are equal are $(1, 1), (2, 2), ..., (n, n)$ giving $n$ pairs.</p>
+
+<p>That makes the probability of picking two equal numbers</p>
+
+\[
+\text{Probability} = \f{\text{Matches}}{\text{Total}}
+                   = \f{n}{n^2}
+                   = \f{1}{n}
+\]
+
+<p>... which is indeed the correct probability.</p>
+
+<hr>
+
+<p>Now if you play a variation where the two numbers can also add up to $n$ as well as be the same, the probabilities are different:</p>
+
+<p>If $n$ is odd, the pairs adding to $n$ are $(1, n-1), (2, n-2), ..., (n-1, 1)$, giving $n-1$ pairs, none of which have both numbers the same. That makes the number of matches, $n+(n-1)$, the number of equal number pairs, plus the number of pairs adding to $n$.</p>
+
+<p>The probability is then</p>
+
+\[
+\text{Probability}_\text{odd} = \f{n+(n-1)}{n^2}
+                              = \f{2n-1}{n^2}
+                              = \f{2}{n}-\f{1}{n^2}
+\]
+
+<p>If $n$ is even, there are also $n-1$ pairs adding to $n$, but this time there is one pair in that set where both numbers are the same, $(\f{n}{2}, \f{n}{2})$. That makes the number of matches, $n+(n-1)-1$, the number of equal number pairs, plus the number of pairs adding to $n$, minus the one pair counted twice because it is in both groups.</p>
+
+<p>The probability is then</p>
+
+\[
+\text{Probability}_\text{even} = \f{n+(n-1)-1}{n^2}
+                               = \f{2n-2}{n^2}
+                               = \f{2}{n}-\f{2}{n^2}
+\]
+
+<p>This means that, with this variation, the probability of the person having to do the dare is almost twice as high as they intended it to be!</p>
+
+</body>
+
+</html>

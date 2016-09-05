@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Cubic Formula 1</title>
+  <meta charset="UTF-8">
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]},
+      displayAlign: "left"
+    });
+  </script>
+  <script type="text/javascript"
+    src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_HTMLorMML">
+  </script>
+  <link rel="stylesheet" type="text/css" href="math-papers.css">
+</head>
+
+<body>
+<h1>Cubic Formula 1</h1>
+<p class="date">Pub: Sep. 13, 2014 | Wri: a few years ago</p>
+<hr class="titlehr">
+\[
+\def \l {\left}
+\def \r {\right}
+\def \f {\frac}
+
+\def \b#1{\l(#1\r)}
+
+\def \und#1{\style{text-decoration: underline}{#1}}
+\def \link#1#2{\und{\href{#1}{#2}}}
+\def \tlink#1#2{\link{#1}{\text{#2}}}
+
+\def \lq {\unicode{x201C}}
+\def \rq {\unicode{x201D}}
+\def \qt#1{\lq #1 \rq}
+
+\text{Note: This derivation is based on steps found at $\link{http://www.sosmath.com/algebra/factor/fac11/fac11.html}{\text{The }\qt{\text{Cubic Formula}}\text{ - SOS Math}}$ and other sites.} \\[6pt] 
+
+t^3+pt+q = 0 \\[6pt]
+
+\text{Let $t = u+v$} \\[6pt]
+
+(u+v)^3 + p(u+v) + q = 0 \\
+
+u^3 + 3u^2v + 3uv^2 + v^3 + p(u+v) + q = 0 \\
+
+u^3 + v^3 + 3uv(u+v) + p(u+v) + q = 0 \\
+
+u^3 + v^3 + q + (3uv + p)(u+v) = 0 \\[6pt]
+
+\begin{split}
+& u^3 + v^3 + q = 0 \\
+& u^3 + v^3 = -q
+\end{split}
+\qquad
+\begin{split}
+& 3uv + p = 0 \\
+& 3uv = -p
+\end{split} \\
+
+v = -\f{p}{3u} \\
+
+u^3 + \b{-\f{p}{3u}}^3 = -q \\
+
+u^3 - \f{p^3}{27u^3} = -q \\
+
+u^6 - \f{p^3}{27} = -qu^3 \\
+
+u^6 + qu^3 - \f{p^3}{27} = 0 \\[12pt]
+
+\begin{split}
+u^3 &= \f{-q \pm \sqrt{q^2 + 4\b{\f{p^3}{27}}}}{2} \\[3pt]
+    &= \f{-q \pm 2\sqrt{\f{q^2}{4} + \f{p^3}{27}}}{2} \\[3pt]
+    &= -\f{q}{2} \pm \sqrt{\f{q^2}{4} + \f{p^3}{27}}
+\end{split} \\[53pt]
+
+\begin{split}
+v^3 &= -q - u^3 \\[3pt]
+    &= -q + \f{q}{2} \mp \sqrt{\f{q^2}{4} + \f{p^3}{27}} \\[3pt]
+    &= -\f{q}{2} \mp \sqrt{\f{q^2}{4} + \f{p^3}{27}}
+\end{split} \\[39pt]
+
+\def \root [#1]#2{\sqrt[\leftroot{2}\uproot{2}\scriptstyle #1]{#2}}
+
+\begin{split}
+& u^3 = -\f{q}{2} + \sqrt{\f{q^2}{4} + \f{p^3}{27}} \\[3pt]
+& \begin{split}
+  u &= \root[3]{-\f{q}{2} + \sqrt{\f{q^2}{4} + \f{p^3}{27}}} \\[3pt]
+    &= \root[3]{-\f{q}{2} + \sqrt{\b{\f{q}{2}}^2 + \b{\f{p}{3}}^3}}
+  \end{split}
+\end{split}
+\qquad
+\begin{split}
+& v^3 = -\f{q}{2} - \sqrt{\f{q^2}{4} + \f{p^3}{27}} \\[3pt]
+& \begin{split}
+  v &= \root[3]{-\f{q}{2} - \sqrt{\f{q^2}{4} + \f{p^3}{27}}} \\[3pt]
+    &= \root[3]{-\f{q}{2} - \sqrt{\b{\f{q}{2}}^2 + \b{\f{p}{3}}^3}}
+  \end{split}
+\end{split} \\[53pt]
+
+\begin{split}
+t_1 & = u+v \text{, take real cube root} \\
+t_2 & = -\f{1}{2}(u+v) + \f{\sqrt{3}}{2}(u-v)i \\
+t_3 & = -\f{1}{2}(u+v) - \f{\sqrt{3}}{2}(u-v)i
+\end{split} \\[33pt]
+
+\text{For derivation of $t_2$ and $t_3$, see $\tlink{cubic-formula2.html}{Cubic Formula 2}$} 
+
+\]
+</body>
+
+</html>

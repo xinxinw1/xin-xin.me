@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Cubic Formula 2</title>
+  <meta charset="UTF-8">
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]},
+      displayAlign: "left"
+    });
+  </script>
+  <script type="text/javascript"
+    src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_HTMLorMML">
+  </script>
+  <link rel="stylesheet" type="text/css" href="math-papers.css">
+</head>
+
+<body>
+<h1>Cubic Formula 2</h1>
+<p class="date">Pub: Sep. 13, 2014 | Wri: a few years ago</p>
+<hr class="titlehr">
+\[
+\def \l {\left}
+\def \r {\right}
+\def \f {\frac}
+
+\def \b#1{\l(#1\r)}
+
+\def \root [#1]#2{\sqrt[\leftroot{2}\uproot{2}\scriptstyle #1]{#2}}
+
+t^3+pt+q = 0 \\
+
+t_1 = u+v
+\qquad
+p = -3uv
+\qquad
+q = -(u^3+v^3) \\
+
+t^3 - 3uvt - (u^3+v^3) = 0 \\[6pt]
+
+\def \p {\phantom}
+
+\require{enclose}
+
+\begin{split}
+        & \kern1.1ex t^2 + (u+v)t + (u^2-uv+v^2)       \\[-2pt]
+t-(u+v) & \enclose{longdiv}{t^3-3uvt-(u^3+v^3)\hspace{8.8ex}}   \\[-2pt]
+        & \kern0.7ex
+          \begin{split}
+          & t^3-(u+v)t^2           \\[-2pt]
+          & \overline{\p{t^3-\;}(u+v)t^2}-3uvt           \\[-2pt]
+          & \p{t^3-\;}(u+v)t^2-(u+v)^2t \\[-2pt]
+          & \p{t^3-\;}\overline{\p{(u+v)t^2-\;}(u^2+2uv+v^2)t}-3uvt     \\[-2pt]
+          & \p{t^3-\;}\p{(u+v)t^2-\;}(u^2-uv+v^2)t-(u^3+v^3)   \\[-2pt]
+          & \p{t^3-\;}\p{(u+v)t^2-\;}
+            \underline{(u^2-uv+v^2)t-(u+v)(u^2-uv+v^2)}   \\[-2pt]
+          & \p{t^3-\;}\p{(u+v)t^2-\;}0           \\[-2pt]
+          \end{split}
+\end{split} \\
+
+t^2 + (u+v)t + u^2-uv+v^2 = 0 \\
+
+\begin{split}
+t &= \f{-(u+v) \pm \sqrt{u^2+2uv+v^2-4u^2+4uv-4v^2}}{2} \\
+  &= \f{-(u+v) \pm \sqrt{-3u^2+6uv-3v^2}}{2} \\
+  &= \f{-(u+v) \pm \sqrt{-3(u-v)^2}}{2} \\
+  &= -\f{1}{2}(u+v) \pm \f{\sqrt{3}}{2}\sqrt{-(u-v)^2}
+\end{split} \\~\\[3pt]
+
+\text{$u-v$ can only be real or purely imaginary.} \\[9pt]
+
+\text{If $u-v$ is real,} \\
+\sqrt{-(u-v)^2} = (u-v)i \\
+\text{If $u-v$ is imaginary,} \\
+\sqrt{-(u-v)^2} = -(u-v)i \\[15pt]
+
+\text{This amounts to $t_2$ and $t_3$ switching places if we let} \\
+\sqrt{-(u-v)^2} = (u-v)i \\[15pt]
+
+\begin{split}
+t_1 & = u+v \\
+t_2 & = -\f{1}{2}(u+v) + \f{\sqrt{3}}{2}(u-v)i \\
+t_3 & = -\f{1}{2}(u+v) - \f{\sqrt{3}}{2}(u-v)i
+\end{split} \\
+
+\]
+
+
+
+</body>
+
+</html>

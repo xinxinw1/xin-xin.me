@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Testing</title>
+  <meta charset="UTF-8">
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]},
+      displayAlign: "left"
+    });
+  </script>
+  <script type="text/javascript"
+    src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_HTMLorMML">
+  </script>
+  <link rel="stylesheet" type="text/css" href="math-papers.css">
+</head>
+
+<body>
+<h1>Testing</h1>
+When $a \ne 0$, there are two solutions to \(ax^2 + bx + c = 0\) and they are
+$$x = {-b \pm \sqrt{b^2-4ac} \over 2a}.$$
+Testing $x = {-b \pm \sqrt{b^2-4ac} \over 2a}.$
+$x = {-b \pm \sqrt{b^2-4ac} \over 2a}.$
+\[
+\def \l {\left}
+\def \r {\right}
+\def \f {\frac}
+
+\def \b#1{\l(#1\r)}
+
+\def \root [#1]#2{\sqrt[\leftroot{2}\uproot{2}\scriptstyle #1]{#2}}
+
+\newenvironment{longdiv}[3]{
+  \require{enclose}
+  \begin{array}{r}
+    #3   \\[-3pt]
+    #2 \enclose{longdiv}{#1}\kern-.2ex    \\[-3pt]
+}{\end{array}}
+
+\def \fracop#1#2#3{
+  \begin{array}{r}
+    #1 \\[-3pt]
+    #2 \\ \hline
+    #3
+  \end{array}
+}
+
+\def \twofrac#1#2{
+  \begin{array}{l}
+    #1 \\ \hline
+    #2
+  \end{array}
+}
+
+\def \mulfrac#1#2#3{
+  \fracop{#1}{\times \, #2}{#3}
+}
+
+\fracop{2}{3}{4} \\
+
+\mulfrac{2}{3}{6} \\
+\mulfrac{2353}{3}{6} \\
+\mulfrac{2}{3253545}{6} \\
+\mulfrac{2}{3}{623643} \\
+
+\require{enclose}
+\begin{array}{r}
+  125                                   \\[-3pt]
+  4 \enclose{longdiv}{500}\kern-.2ex    \\[-3pt]
+    \underline{4\phantom{00}}           \\[-3pt]
+    10\phantom{0}                       \\[-3pt]
+    \underline{\phantom{0}8\phantom{0}} \\[-3pt]
+    \phantom{0}20                       \\[-3pt]
+    \underline{\phantom{0}20}           \\[-3pt]
+    \phantom{00}0
+\end{array} \\
+
+\begin{array}{r}
+  12                                   \\[-3pt]
+  4 \enclose{longdiv}{500}\kern-.2ex    \\[-3pt]
+    \twofrac{4}{10}
+\end{array} \\
+
+\begin{array}{r}
+  t^2 + (u+v)t + (u^2-uv+v^2)       \\[-3pt]
+  t-(u+v) \enclose{longdiv}{t^3-3uvt-(u^3+v^3)}\kern-.2ex   \\[-3pt]
+    \underline{4\phantom{00}}           \\[-3pt]
+    10\phantom{0}                       \\[-3pt]
+    \underline{\phantom{0}8\phantom{0}} \\[-3pt]
+    \phantom{0}20                       \\[-3pt]
+    \underline{\phantom{0}20}           \\[-3pt]
+    \phantom{00}0
+\end{array} \\
+
+\def \p {\phantom}
+
+\begin{split}
+        & \kern1.1ex t^2 + (u+v)t + (u^2-uv+v^2)       \\[-2pt]
+t-(u+v) & \enclose{longdiv}{t^3-3uvt-(u^3+v^3)\hspace{8.8ex}}   \\[-2pt]
+        & \kern0.7ex
+          \begin{split}
+          & t^3-(u+v)t^2           \\[-2pt]
+          & \overline{\p{t^3-\;}(u+v)t^2}-3uvt           \\[-2pt]
+          & \p{t^3-\;}(u+v)t^2-(u+v)^2t \\[-2pt]
+          & \p{t^3-\;}\overline{\p{(u+v)t^2-\;}(u^2+2uv+v^2)t}-3uvt     \\[-2pt]
+          & \p{t^3-\;}\p{(u+v)t^2-\;}(u^2-uv+v^2)t-(u^3+v^3)   \\[-2pt]
+          & \p{t^3-\;}\p{(u+v)t^2-\;}
+            \underline{(u^2-uv+v^2)t-(u+v)(u^2-uv+v^2)}   \\[-2pt]
+          & \p{t^3-\;}\p{(u+v)t^2-\;}0           \\[-2pt]
+          \end{split}
+\end{split} \\
+
+
+\]
+
+
+
+
+\mulfrac{2}{3}{6} \\
+\mulfrac{2353}{3}{6} \\
+\mulfrac{2}{3253545}{6} \\
+\mulfrac{2}{3}{623643} \\
+
+\mulfrac{\b{x_1 x_2}}{\b{x'_1 x'_2}}{\b{y_1y_2y_3y_4}} \\
+
+
+
+\begin{equation}
+\frac{
+    \begin{array}[b]{r}
+      \left( x_1 x_2 \right)\\
+      \times \left( x'_1 x'_2 \right)
+    \end{array}
+  }{
+    \left( y_1y_2y_3y_4 \right)
+  }
+\end{equation}
+
+\mulfrac{2}{3}{5}
+
+\begin{longdiv}{500}{4}{125}
+  \underline{4\phantom{00}}           \\[-3pt]
+  10\phantom{0}                       \\[-3pt]
+  \underline{\phantom{0}8\phantom{0}} \\[-3pt]
+  \phantom{0}20                       \\[-3pt]
+  \underline{\phantom{0}20}           \\[-3pt]
+  \phantom{00}0
+\end{longdiv}
+
+
+
+
+
+
+\begin{array}{r}
+  125                                   \\[-3pt]
+  4 \enclose{longdiv}{500}\kern-.2ex    \\[-3pt]
+    \underline{4\phantom{00}}           \\[-3pt]
+    10\phantom{0}                       \\[-3pt]
+    \underline{\phantom{0}8\phantom{0}} \\[-3pt]
+    \phantom{0}20                       \\[-3pt]
+    \underline{\phantom{0}20}           \\[-3pt]
+    \phantom{00}0
+\end{array}
+</body>
+
+</html>

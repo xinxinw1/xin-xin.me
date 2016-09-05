@@ -1,0 +1,23 @@
+/****** Math Papers ******/
+
+* {margin: 0; padding: 0; border: 0 none; font-family: Georgia, "Times New Roman", serif;}
+
+body {padding: 10px;}
+
+h1, h2, h3, h4, h5, h6 {margin-bottom: 15px;}
+h1 {font-size: 22px;}
+h2 {font-size: 18px;}
+
+ul {list-style-type: disc; margin-left: 15px;}
+li {margin-bottom: 5px;}
+
+a {text-decoration: underline; color: #000000;}
+
+.date {color: #444; margin-top: -13px; margin-bottom: 7px; }
+
+hr {height: 1px; color: #888; background-color: #888; margin-top: 10px; margin-bottom: 10px;}
+.titlehr {margin-top: 0;}
+
+p {margin-bottom: 10px;}
+
+p.conv {font-style: italic;}

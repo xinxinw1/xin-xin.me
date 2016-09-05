@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Find Other cbrt(a) from Known cbrt(a)</title>
+  <meta charset="UTF-8">
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]},
+      displayAlign: "left"
+    });
+  </script>
+  <script type="text/javascript"
+    src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_HTMLorMML">
+  </script>
+  <link rel="stylesheet" type="text/css" href="math-papers.css">
+</head>
+
+<body>
+<div style="display: none">
+\(
+\def \l {\left}
+\def \r {\right}
+\def \f {\frac}
+
+\def \b#1{\l(#1\r)}
+
+\def \root [#1]#2{\sqrt[\leftroot{2}\uproot{2}\scriptstyle #1]{#2}}
+\def \sroot [#1]#2{\sqrt[\large #1]{#2}}
+
+\def \cbrt #1{\root[3]{#1}}
+\def \scbrt #1{\sroot[3]{#1}}
+
+\def \p {\phantom}
+
+\def \stag#1{\quad (#1)}
+
+\def \box#1{\boxed{\displaystyle{#1}}}
+
+\DeclareMathOperator{\acoth}{acoth}
+\)
+</div>
+
+<h1>Find Other $\scbrt{a}$ from Known $\scbrt{a}$</h1>
+<p class="date">Pub: Sep. 14, 2014 | Wri: a few years ago</p>
+<hr class="titlehr">
+
+\[
+
+\text{Let } x = \scbrt{a} \\
+x^3 = a \\
+x^3 - a = 0 \\
+x^3 - \b{\scbrt{a}}^3 = 0 \\
+
+\b{x - \scbrt{a}}\!\!\b{x^2 + x\scbrt{a} + \scbrt{a^2}} = 0 \\
+
+x = \scbrt{a}
+\qquad
+x^2 + x\scbrt{a} + \scbrt{a^2} = 0 \\
+
+% use \phantom to make x = \scbrt{a} top aligned
+\p{x = \scbrt{a}}
+\qquad
+\begin{split}
+\! x &= \f{-\scbrt{a} \pm \sqrt{\scbrt{a^2} - 4\scbrt{a^2}}}{2} \\[3pt]
+     &= \f{-\scbrt{a} \pm \sqrt{-3\scbrt{a^2}}}{2} \\[3pt]
+     &= \f{-\scbrt{a} \pm \scbrt{a}\sqrt{-3}}{2} \\[3pt]
+     &= \scbrt{a}\b{-\f{1}{2} \pm \f{\sqrt{3}}{2}i}
+\end{split} \\[63pt]
+
+x_1 = \scbrt{a}
+\qquad
+x_2 = \scbrt{a}\b{-\f{1}{2} + \f{\sqrt{3}}{2}i}
+\qquad
+x_3 = \scbrt{a}\b{-\f{1}{2} - \f{\sqrt{3}}{2}i} \\[15pt]
+
+% The extra column sets the height of the row so that there will be more 
+%   vertical padding at the top and bottom
+% The rows are align middle.
+% The \!\!\!\!\!\!\!\!\! removes the horizontal space that is
+%   introduced by the extra column
+
+\begin{array}{l|ll}
+\hline
+  \begin{split}
+  & \scbrt{1} = 1 \\
+  & \box{x_1 = 1}
+    \qquad
+    x_2 = -\f{1}{2} + \f{\sqrt{3}}{2}i
+    \qquad
+    x_3 = -\f{1}{2} - \f{\sqrt{3}}{2}i
+  \end{split} 
+& \begin{split}
+  & \scbrt{-1} = -1 \\
+  & x_1 = -1
+    \qquad
+    x_2 = \f{1}{2} - \f{\sqrt{3}}{2}i
+    \qquad
+    \box{x_3 = \f{1}{2} + \f{\sqrt{3}}{2}i}
+  \end{split} 
+& \!\!\!\!\!\!\!\!\! \begin{split}
+  & \\[25pt]
+  & 
+  \end{split}
+\\ \hline
+  \begin{split}
+  & \scbrt{i} = -i \\
+  & x_1 = -i
+    \qquad
+    \box{x_2 = \f{\sqrt{3}}{2} + \f{1}{2}i}
+    \qquad
+    x_3 = -\f{\sqrt{3}}{2} + \f{1}{2}i
+  \end{split} 
+& \begin{split}
+  & \scbrt{-i} = i \\
+  & x_1 = i
+    \qquad
+    x_2 = -\f{\sqrt{3}}{2} - \f{1}{2}i
+    \qquad
+    \box{x_3 = \f{\sqrt{3}}{2} - \f{1}{2}i}
+  \end{split}
+& \!\!\!\!\!\!\!\!\! \begin{split}
+  & \\[25pt]
+  & 
+  \end{split}
+\end{array}
+
+
+
+\]
+</body>
+
+</html>
