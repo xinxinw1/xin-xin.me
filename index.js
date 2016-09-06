@@ -32,6 +32,7 @@ if (app.get('email_host') && app.get('email_from') && app.get('email_pass')){
 }
 
 app.set('port', (process.env.PORT || 8080));
+app.set('hostname', process.env.HOSTNAME || undefined);
 
 app.set('views', __dirname + '/views')
 app.set('view engine', 'pug');
@@ -84,7 +85,7 @@ app.use(function (req, res){
 });
 
 if (require.main === module){
-  app.listen(app.get('port'), function () {
+  app.listen(app.get('port'), app.get('hostname'), function () {
     console.log('Listening on port ' + app.get('port') + '!');
   });
 } else {
