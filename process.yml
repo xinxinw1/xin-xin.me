@@ -3,6 +3,6 @@ apps:
     name: 'xin-xin.me'
     watch: true
     env:
-      PORT: 8080
+      PORT: 8081
       HOSTNAME: '127.0.0.1'
       NODE_ENV: 'production'
