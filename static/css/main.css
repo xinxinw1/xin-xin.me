@@ -78,8 +78,6 @@ textarea {min-height: 100px; resize: vertical;}
 
 .no-wrap {white-space: nowrap;}
 
-iframe {width: 100%;}
-
 /* Special Media */
 
 @media screen and (min-width: 635px) {
@@ -106,3 +104,5 @@ iframe {width: 100%;}
 .comp-links {margin-left: 10px;}
 .comp-desc {margin-top: 0;}
 .comp-down {margin-top: 0;}
+
+iframe.comp-prev {width: 100%; min-height: 500px; resize: vertical;}
