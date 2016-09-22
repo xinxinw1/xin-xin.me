@@ -18,6 +18,10 @@ mixin comp(comp)
   
   hr
 
+mixin compFirst(comp)
+  hr
+  +comp(comp)
+
 block content
   h1 Music
   
@@ -25,7 +29,10 @@ block content
   
   p Here are some of my (better) compositions:
   
-  each comp in compositions
-    +comp(comp)
+  each comp, i in compositions
+    if i == 0
+      +compFirst(comp)
+    else
+      +comp(comp)
   
   h2 Piano Performances
