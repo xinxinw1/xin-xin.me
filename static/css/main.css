@@ -40,7 +40,7 @@ article > *:first-child, footer > *:first-child, .container > *:first-child {mar
 
 /* General Text and Layout */
 
-h1, h2, p, hr, iframe {margin-top: 10px;}
+h1, h2, p, hr, iframe, embed {margin-top: 10px;}
 a {color: #005EC8;}
 
 h1 {font-size: 26px;}
@@ -105,4 +105,4 @@ textarea {min-height: 100px; resize: vertical;}
 .comp-desc {margin-top: 0;}
 .comp-down {margin-top: 0;}
 
-iframe.comp-prev {width: 100%; min-height: 500px; resize: vertical;}
+embed.comp-prev {width: 100%; min-height: 500px; resize: vertical;}

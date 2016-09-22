@@ -13,4 +13,4 @@ block article
         else 
           | #[a.no-wrap(href='/music/' + short + '/' + link[0]) #{link[1]}] | 
     
-    iframe.comp-prev.flex(src="/music/" + short + '/' + short + '.pdf')
+    embed.comp-prev.flex(src="/music/" + short + '/' + short + '.pdf', type="application/pdf")
