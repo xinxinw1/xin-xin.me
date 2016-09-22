@@ -13,4 +13,4 @@ To run my website on your computer, follow the following steps. You'll need to h
 
 ## License
 
-The content of my website is licensed under (CC BY-ND)[https://creativecommons.org/licenses/by-nd/4.0/].
+The content of my website is licensed under [CC BY-ND](https://creativecommons.org/licenses/by-nd/4.0/).
