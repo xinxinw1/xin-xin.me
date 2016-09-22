@@ -109,7 +109,7 @@ textarea {min-height: 100px; resize: vertical;}
  * The following is for 16:9 width to height ratio
  * 9/16 = 56.25%
  */
-.video {margin-top: 10px; margin-left: -20px; margin-right: -20px;}
+.video {margin-top: 10px; max-width: 640px; /* margin-left: -20px; margin-right: -20px; */}
 
 .video-inner {position: relative; padding-bottom: 56.25%;}
 
