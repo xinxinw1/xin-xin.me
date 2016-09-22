@@ -1,0 +1,16 @@
+extends layout.pug
+
+block article
+  article.flexbox
+    h1= title
+    
+    p= desc
+    
+    p
+      each link, i in links
+        if i == links.length-1
+          a.no-wrap(href='/music/' + short + '/' + link[0]) #{link[1]}
+        else 
+          | #[a.no-wrap(href='/music/' + short + '/' + link[0]) #{link[1]}] | 
+    
+    iframe.flex(src="/ViewerJS/#../music/" + short + '/' + short + '.pdf', allowfullscreen, webkitallowfullscreen)

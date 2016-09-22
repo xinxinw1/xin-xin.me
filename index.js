@@ -41,9 +41,9 @@ app.get('/', function (req, res) {
   res.render('index');
 });
 
-function routePage(page){
+function routePage(page, data){
   app.get('/' + page, function (req, res) {
-    res.render(page);
+    res.render(page, data);
   });
 }
 
@@ -53,6 +53,43 @@ for (var i = 0; i < pages.length; i++){
   routePage(pages[i]);
 }
 
+var compositions = [
+  {
+    title: "You Are Loved",
+    short: "love",
+    date: "October 07, 2011",
+    desc: "This is a song about unconditional love. Just tune in. Just remember. You are loved.",
+    links: [
+      ['love.pdf', 'Download (pdf)'],
+      ['love.midi', 'Listen (midi)'],
+      ['lovep.mp3', 'Listen (mp3, piano only)'],
+      ['love.ly', 'View Source (Lilypond)']
+    ]
+  },
+  {
+    title: "I Want To Be Great",
+    short: "great",
+    date: "July 06, 2011",
+    desc: "This song was written for those who feel that they aren't really doing what they want to be doing. It is a perfect inspiration for those who are transitioning to doing work they love.",
+    links: [
+      ['great.pdf', 'Download (pdf)'],
+      ['great.midi', 'Listen (midi)'],
+      ['great.ly', 'View Source (Lilypond)']
+    ]
+  }
+];
+
+routePage('music', {compositions: compositions});
+
+function compPage(comp){
+  app.get('/music/' + comp.short, function (req, res) {
+    res.render('music-comp', comp);
+  });
+}
+
+compositions.forEach(compPage);
+
+
 function constructionPage(page, title){
   app.get('/' + page, function (req, res) {
     console.log('Construction page: /' + page + ' ' + title);
@@ -60,7 +97,7 @@ function constructionPage(page, title){
   });
 }
 
-var constructions = [['music', "Music"]];
+var constructions = [];
 
 for (var i = 0; i < constructions.length; i++){
   constructionPage(constructions[i][0], constructions[i][1]);

@@ -40,10 +40,11 @@ article > *:first-child, footer > *:first-child, .container > *:first-child {mar
 
 /* General Text and Layout */
 
-h1, p, hr {margin-top: 10px;}
+h1, h2, p, hr, iframe {margin-top: 10px;}
 a {color: #005EC8;}
 
 h1 {font-size: 26px;}
+h2 {font-size: 24px; font-weight: normal;}
 
 hr {height: 1px; color: #777; background-color: #777; margin: 16px 0;}
 
@@ -75,6 +76,10 @@ textarea {min-height: 100px; resize: vertical;}
 
 .b {font-weight: bold;}
 
+.no-wrap {white-space: nowrap;}
+
+iframe {width: 100%;}
+
 /* Special Media */
 
 @media screen and (min-width: 635px) {
@@ -92,5 +97,12 @@ textarea {min-height: 100px; resize: vertical;}
 
 /* Specific Page CSS */
 
-.code-title {font-weight: bold; margin-bottom: 0;}
+.code-title {font-weight: bold;}
 .code-desc {margin-top: 0;}
+
+.comp-title-line {}
+.comp-title {font-weight: bold;}
+.comp-date {margin-left: 15px; color: #777;}
+.comp-links {margin-left: 10px;}
+.comp-desc {margin-top: 0;}
+.comp-down {margin-top: 0;}

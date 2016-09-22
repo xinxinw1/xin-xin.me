@@ -1,0 +1,22 @@
+extends layout.pug
+
+block vars
+  - title="Music"
+
+mixin comp(title, short, date, desc)
+  p.comp-title-line
+    span.comp-title #[a(href=short) #{title}]
+    span.comp-date= date
+  p.comp-desc= desc
+
+block content
+  h1 Music
+  
+  h2 Compositions
+  
+  p Here are some of my (better) compositions:
+  
+  each comp in compositions
+    +comp(comp.title, '/music/' + comp.short, comp.date, comp.desc)
+  
+  h2 Piano Performances
