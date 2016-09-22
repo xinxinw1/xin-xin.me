@@ -64,7 +64,8 @@ var compositions = [
       ['love.midi', 'Listen (midi)'],
       ['lovep.mp3', 'Listen (mp3, piano only)'],
       ['love.ly', 'View Source (Lilypond)']
-    ]
+    ],
+    mainLink: 'love.pdf'
   },
   {
     title: "I Want To Be Great",
@@ -75,19 +76,12 @@ var compositions = [
       ['great.pdf', 'Download (pdf)'],
       ['great.midi', 'Listen (midi)'],
       ['great.ly', 'View Source (Lilypond)']
-    ]
+    ],
+    mainLink: 'great.pdf'
   }
 ];
 
 routePage('music', {compositions: compositions});
-
-function compPage(comp){
-  app.get('/music/' + comp.short, function (req, res) {
-    res.render('music-comp', comp);
-  });
-}
-
-compositions.forEach(compPage);
 
 
 function constructionPage(page, title){

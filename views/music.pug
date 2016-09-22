@@ -2,12 +2,21 @@ extends layout.pug
 
 block vars
   - title="Music"
-
-mixin comp(title, short, date, desc)
+  
+mixin comp(comp)
   p.comp-title-line
-    span.comp-title #[a(href=short) #{title}]
-    span.comp-date= date
-  p.comp-desc= desc
+    span.comp-title #[a(href='/music/' + comp.short + '/' + comp.mainLink)= comp.title]
+    span.comp-date= comp.date
+  p.comp-desc= comp.desc
+  
+  p
+    each link, i in comp.links
+      if i == comp.links.length-1
+        a.no-wrap(href='/music/' + comp.short + '/' + link[0])= link[1]
+      else 
+        | #[a.no-wrap(href='/music/' + comp.short + '/' + link[0])= link[1]] | 
+  
+  hr
 
 block content
   h1 Music
@@ -17,6 +26,6 @@ block content
   p Here are some of my (better) compositions:
   
   each comp in compositions
-    +comp(comp.title, '/music/' + comp.short, comp.date, comp.desc)
+    +comp(comp)
   
   h2 Piano Performances
