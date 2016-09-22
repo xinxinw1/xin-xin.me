@@ -21,12 +21,12 @@ html(lang="en", id=pageid)
               li: a(href="/music") Music
               li: a(href="/contact") Contact
             #nav-drop-cont
-              ul#nav-drop
+              ul#nav-drop(onclick="closeNav();")
                 li: a(href="/code") Code
                 li: a(href="/math") Math
                 li: a(href="/music") Music
                 li: a(href="/contact") Contact
-              a#nav-link(href="#")
+              a#nav-link(href="#", onclick="openNav(); return false;")
                 img(src="/img/menu.png", width="26", height="26", alt="Menu")
       block article
         article
