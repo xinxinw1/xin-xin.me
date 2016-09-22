@@ -13,11 +13,3 @@ function closeNav(){
   $("nav-drop").style.display = "none";
   $("overlay").style.display = "none";
 };
-
-window.onload = function (){
-  $("nav-link").onclick = function (){
-    openNav();
-    return false;
-  };
-  $("nav-drop").onclick = closeNav;
-};

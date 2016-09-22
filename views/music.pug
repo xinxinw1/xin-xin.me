@@ -1,0 +1,49 @@
+extends layout.pug
+
+block vars
+  - title="Music"
+  
+mixin comp(comp)
+  p
+    span.comp-title #[a(href='/music/' + comp.short + '/' + comp.mainLink)= comp.title]
+    span.comp-date= comp.date
+  p.comp-desc= comp.desc
+  
+  p
+    each link, i in comp.links
+      if i == comp.links.length-1
+        a.no-wrap(href='/music/' + comp.short + '/' + link[0])= link[1]
+      else 
+        | #[a.no-wrap(href='/music/' + comp.short + '/' + link[0])= link[1]] | 
+  
+  hr
+
+mixin compFirst(comp)
+  hr
+  +comp(comp)
+  
+mixin piano(title, url)
+  h3= title
+
+  .video.piano: .video-inner: iframe(src=url, frameborder="0", allowfullscreen)
+
+block content
+  h1 Music
+  
+  h2 Compositions
+  
+  p Here are some compositions I wrote:
+  
+  each comp, i in compositions
+    if i == 0
+      +compFirst(comp)
+    else
+      +comp(comp)
+  
+  h2 Piano Performances
+  
+  p I took piano lessons from Ruta Vaivade in Oakville, Ontario (who I highly recommend if you want to become a concert pianist) and completed my Grade 10 RCM. Here are some recordings I made:
+  
+  +piano('Hungarian Rhapsody No. 2 by Liszt', "https://www.youtube.com/embed/Apfvr2DCzKw")
+  +piano('Fugue in E-flat Major WTC 2 by Bach', "https://www.youtube.com/embed/tJLoWKCXnmA")
+  +piano('Etude in E Major Op. 28, No. 3 by Chopin', "https://www.youtube.com/embed/6BvAdF7clp4")

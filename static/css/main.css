@@ -40,10 +40,12 @@ article > *:first-child, footer > *:first-child, .container > *:first-child {mar
 
 /* General Text and Layout */
 
-h1, p, hr {margin-top: 10px;}
+h1, h2, h3, p, hr {margin-top: 10px;}
 a {color: #005EC8;}
 
 h1 {font-size: 26px;}
+h2 {font-size: 24px; font-weight: normal;}
+h3 {font-size: 19px; font-weight: normal;}
 
 hr {height: 1px; color: #777; background-color: #777; margin: 16px 0;}
 
@@ -75,6 +77,8 @@ textarea {min-height: 100px; resize: vertical;}
 
 .b {font-weight: bold;}
 
+.no-wrap {white-space: nowrap;}
+
 /* Special Media */
 
 @media screen and (min-width: 635px) {
@@ -92,5 +96,24 @@ textarea {min-height: 100px; resize: vertical;}
 
 /* Specific Page CSS */
 
-.code-title {font-weight: bold; margin-bottom: 0;}
+.code-title {font-weight: bold;}
 .code-desc {margin-top: 0;}
+
+.comp-title {font-weight: bold;}
+.comp-date {margin-left: 15px; color: #777;}
+.comp-desc {margin-top: 0;}
+
+/* The following idea comes from
+ * https://coolestguidesontheplanet.com/videodrome/youtube/
+ * 
+ * The following is for 16:9 width to height ratio
+ * 9/16 = 56.25%
+ */
+.video {margin-top: 10px; max-width: 640px; /* margin-left: -20px; margin-right: -20px; */}
+
+.video-inner {position: relative; padding-bottom: 56.25%;}
+
+.video-inner iframe, .video object, .video embed {position: absolute; top: 0; left: 0; width: 100%; height: 100%;}
+
+/* original dimensions is 654:480 width to height */
+.video.piano .video-inner {padding-bottom: 73.39%;}
