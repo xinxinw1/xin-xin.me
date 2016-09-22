@@ -21,6 +21,11 @@ mixin comp(comp)
 mixin compFirst(comp)
   hr
   +comp(comp)
+  
+mixin piano(title, url)
+  h3= title
+
+  div.video.piano: iframe(src=url, frameborder="0", allowfullscreen)
 
 block content
   h1 Music
@@ -36,3 +41,7 @@ block content
       +comp(comp)
   
   h2 Piano Performances
+  
+  +piano('Hungarian Rhapsody No. 2 by Liszt', "https://www.youtube.com/embed/Apfvr2DCzKw")
+  +piano('Fugue in E-flat Major WTC 2 by Bach', "https://www.youtube.com/embed/tJLoWKCXnmA")
+  +piano('Etude in E Major Op. 28, No. 3 by Chopin', "https://www.youtube.com/embed/6BvAdF7clp4")

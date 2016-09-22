@@ -40,11 +40,12 @@ article > *:first-child, footer > *:first-child, .container > *:first-child {mar
 
 /* General Text and Layout */
 
-h1, h2, p, hr, iframe, embed {margin-top: 10px;}
+h1, h2, h3, p, hr {margin-top: 10px;}
 a {color: #005EC8;}
 
 h1 {font-size: 26px;}
 h2 {font-size: 24px; font-weight: normal;}
+h3 {font-size: 19px; font-weight: normal;}
 
 hr {height: 1px; color: #777; background-color: #777; margin: 16px 0;}
 
@@ -101,3 +102,16 @@ textarea {min-height: 100px; resize: vertical;}
 .comp-title {font-weight: bold;}
 .comp-date {margin-left: 15px; color: #777;}
 .comp-desc {margin-top: 0;}
+
+/* The following idea comes from
+ * https://coolestguidesontheplanet.com/videodrome/youtube/
+ * 
+ * The following is for 16:9 width to height ratio
+ * 9/16 = 56.25%
+ */
+.video {position: relative; width: 100%; margin-top: 10px; padding-bottom: 56.25%; height: 0; overflow: hidden;}
+
+.video iframe, .video object, .video embed {position: absolute; top: 0; left: 0; width: 100%; height: 100%;}
+
+/* original dimensions is 654:480 width to height */
+.video.piano {padding-bottom: 73.39%;}
