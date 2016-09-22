@@ -4,7 +4,7 @@ block vars
   - title="Music"
   
 mixin comp(comp)
-  p.comp-title-line
+  p
     span.comp-title #[a(href='/music/' + comp.short + '/' + comp.mainLink)= comp.title]
     span.comp-date= comp.date
   p.comp-desc= comp.desc

@@ -98,11 +98,6 @@ textarea {min-height: 100px; resize: vertical;}
 .code-title {font-weight: bold;}
 .code-desc {margin-top: 0;}
 
-.comp-title-line {}
 .comp-title {font-weight: bold;}
 .comp-date {margin-left: 15px; color: #777;}
-.comp-links {margin-left: 10px;}
 .comp-desc {margin-top: 0;}
-.comp-down {margin-top: 0;}
-
-embed.comp-prev {width: 100%; min-height: 500px; resize: vertical;}
