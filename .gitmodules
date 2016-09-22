@@ -1,24 +1,24 @@
-[submodule "static/codes/calc"]
-	path = static/codes/calc
+[submodule "static/code/calc"]
+	path = static/code/calc
 	url = https://github.com/xinxinw1/calc
-[submodule "static/codes/lisp-repl"]
-	path = static/codes/lisp-repl
+[submodule "static/code/lisp-repl"]
+	path = static/code/lisp-repl
 	url = https://github.com/xinxinw1/lisp-repl
-[submodule "static/codes/sigfig"]
-	path = static/codes/sigfig
+[submodule "static/code/sigfig"]
+	path = static/code/sigfig
 	url = https://github.com/xinxinw1/sigfig
-[submodule "static/codes/factor"]
-	path = static/codes/factor
+[submodule "static/code/factor"]
+	path = static/code/factor
 	url = https://github.com/xinxinw1/factor
-[submodule "static/codes/cont-frac"]
-	path = static/codes/cont-frac
+[submodule "static/code/cont-frac"]
+	path = static/code/cont-frac
 	url = https://github.com/xinxinw1/cont-frac
-[submodule "static/codes/frac-dec"]
-	path = static/codes/frac-dec
+[submodule "static/code/frac-dec"]
+	path = static/code/frac-dec
 	url = https://github.com/xinxinw1/frac-dec
-[submodule "static/codes/progress-bar"]
-	path = static/codes/progress-bar
+[submodule "static/code/progress-bar"]
+	path = static/code/progress-bar
 	url = https://github.com/xinxinw1/progress-bar
-[submodule "static/codes/day-month-year"]
-	path = static/codes/day-month-year
+[submodule "static/code/day-month-year"]
+	path = static/code/day-month-year
 	url = https://github.com/xinxinw1/day-month-year
