@@ -2,6 +2,7 @@ apps:
   - script: ./index.js
     name: 'xin-xin.me'
     watch: true
+    log_date_format: 'YYYY-MM-DD HH:mm:ss.SSS'
     env:
       PORT: 8081
       HOSTNAME: '127.0.0.1'
