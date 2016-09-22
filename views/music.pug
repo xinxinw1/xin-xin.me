@@ -25,7 +25,7 @@ mixin compFirst(comp)
 mixin piano(title, url)
   h3= title
 
-  div.video.piano: iframe(src=url, frameborder="0", allowfullscreen)
+  .video.piano: .video-inner: iframe(src=url, frameborder="0", allowfullscreen)
 
 block content
   h1 Music

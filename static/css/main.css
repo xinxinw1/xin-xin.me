@@ -109,9 +109,11 @@ textarea {min-height: 100px; resize: vertical;}
  * The following is for 16:9 width to height ratio
  * 9/16 = 56.25%
  */
-.video {position: relative; margin-top: 10px; padding-bottom: 56.25%; height: 0; overflow: hidden; margin-left: -20px; margin-right: -20px;}
+.video {margin-top: 10px; margin-left: -20px; margin-right: -20px;}
 
-.video iframe, .video object, .video embed {position: absolute; top: 0; left: 0; width: 100%; height: 100%;}
+.video-inner {position: relative; padding-bottom: 56.25%;}
+
+.video-inner iframe, .video object, .video embed {position: absolute; top: 0; left: 0; width: 100%; height: 100%;}
 
 /* original dimensions is 654:480 width to height */
-.video.piano {padding-bottom: 73.39%;}
+.video.piano .video-inner {padding-bottom: 73.39%;}
