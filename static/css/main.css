@@ -5,9 +5,11 @@ html {box-sizing: border-box; height: 100%;}
 
 body {height: 100%; color: #000; text-align: left; font: 16px 'Raleway', sans-serif; line-height: 1.5;}
 
+header, article, footer, nav {display: block;}
+
 /* General Design */
 
-#outer {box-sizing: content-box; max-width: 800px; margin: auto; min-height: 100%; padding: 0 20px; height: 100%; display: flex; flex-flow: column;}
+#outer {box-sizing: content-box; max-width: 800px; margin: auto; min-height: 100%; padding: 0 20px; height: 100%; display: -webkit-flex; -webkit-flex-flow: column; display: flex; flex-flow: column;}
 
 header {border-bottom: 1px solid #777; white-space: nowrap; padding-top: 16px; padding-bottom: 12px;}
 header .table {width: 100%;}
@@ -58,8 +60,8 @@ textarea {min-height: 100px; resize: vertical;}
 .tr {display: table-row; vertical-align: top;}
 .td {display: table-cell; vertical-align: top;}
 
-.flexbox {display: flex; flex-flow: column;}
-.flex {flex: 1 0 auto;}
+.flexbox {display: -webkit-flex; -webkit-flex-flow: column; display: flex; flex-flow: column;}
+.flex {-webkit-flex: 1 0 auto; flex: 1 0 auto;}
 
 .fillh {height: 100%;}
 
