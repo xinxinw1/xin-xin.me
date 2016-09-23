@@ -122,6 +122,9 @@ textarea {min-height: 100px; resize: vertical;}
   position: absolute; top: 0; left: 0; width: 100%; height: 100%;
 }
 
+/* The following overlay idea is inspired by
+ * http://www.labnol.org/internet/light-youtube-embeds/27941/
+ */
 .video-preview .video-overlay, .video-preview .video-play {cursor: pointer;}
 .video-preview img {width: 100%; height: 100%;}
 .video-preview .video-overlay {
