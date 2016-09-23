@@ -32,7 +32,7 @@ header a {text-decoration: none; color: #000; -webkit-tap-highlight-color: trans
 
 article {flex: 1 0 auto; padding: 10px 0;}
 
-footer {font-size: 14px; opacity: 0.4; padding-top: 10px; padding-bottom: 20px;}
+footer {font-size: 14px; opacity: 0.4; filter: alpha(opacity=40); padding-top: 10px; padding-bottom: 20px;}
 
 #overlay {display: none; background-color:transparent; position: fixed; top: 0; left: 0; right: 0; bottom: 0;}
 
@@ -113,7 +113,32 @@ textarea {min-height: 100px; resize: vertical;}
 
 .video-inner {position: relative; padding-bottom: 56.25%;}
 
-.video-inner iframe, .video object, .video embed {position: absolute; top: 0; left: 0; width: 100%; height: 100%;}
+.video iframe,
+.video object,
+.video embed,
+.video-preview,
+.video-overlay,
+.video-play {
+  position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+}
+
+.video-preview .video-overlay, .video-preview .video-play {cursor: pointer;}
+.video-preview img {width: 100%; height: 100%;}
+.video-preview .video-overlay {
+  background-color: #000;
+  opacity: 0;
+  filter: alpha(opacity=0); /* For IE8 and earlier */
+  transition: 0.4s all;
+}
+.video-preview:hover .video-overlay {
+  opacity: 0.2;
+  filter: alpha(opacity=20); /* For IE8 and earlier */
+}
+.video-preview .video-play {
+  background: url("/img/play.png") no-repeat; 
+  background-position: center;
+}
 
 /* original dimensions is 654:480 width to height */
 .video.piano .video-inner {padding-bottom: 73.39%;}
+
