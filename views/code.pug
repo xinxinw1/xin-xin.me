@@ -2,6 +2,7 @@ extends layout.pug
 
 block vars
   - title="Code"
+  - description="Here is a listing of some programming projects I've created or worked on:"
 
 mixin program(name, link, source, desc)
   p.code-title #[a(href=link) #{name}] (#[a(href=source) source code])
