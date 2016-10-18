@@ -3,7 +3,7 @@
 html {box-sizing: border-box; height: 100%;}
 *, *:before, *:after {box-sizing: inherit;}
 
-body {height: 100%; color: #000; text-align: left; font: 16px 'Raleway', sans-serif; line-height: 1.5;}
+body {height: 100%; color: #000; text-align: left; font: 16px 'Raleway', sans-serif; line-height: 1.5; background-image: url("http://1.bp.blogspot.com/-90-FcKaGNrA/UiUC0-z-YqI/AAAAAAAAL7E/HZkp2VfYocA/s1600/WP_20130609_002%20(1).jpg"); }
 
 /* General Design */
 
