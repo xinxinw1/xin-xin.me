@@ -3,3 +3,4 @@ npm-debug.log
 email-config.json
 static/music
 static/files
+process.yml
