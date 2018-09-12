@@ -6,9 +6,9 @@ block vars
   
 mixin comp(comp)
   p
-    span.comp-title #[a(href='/music/' + comp.short + '/' + comp.mainLink)= comp.title]
-    span.comp-date= comp.date
-  p.comp-desc= comp.desc
+    span.link-title #[a(href='/music/' + comp.short + '/' + comp.mainLink)= comp.title]
+    span.link-date= comp.date
+  p.link-desc= comp.desc
   
   p
     each link, i in comp.links

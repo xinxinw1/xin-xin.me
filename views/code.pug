@@ -5,8 +5,8 @@ block vars
   - description="Here is a listing of some programming projects I've created or worked on:"
 
 mixin program(name, link, source, desc)
-  p.code-title #[a(href=link) #{name}] (#[a(href=source) source code])
-  p.code-desc= desc
+  p.link-title #[a(href=link)= name] (#[a(href=source) source code])
+  p.link-desc= desc
 
 block content
   h1 Code

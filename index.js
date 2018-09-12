@@ -27,7 +27,7 @@ function routePage(page, data){
   });
 }
 
-var pages = ['empty', 'code', 'contact', 'math'];
+var pages = ['empty', 'code', 'contact', 'math', 'articles', 'articles/property-based'];
 
 pages.forEach(function (page){
   routePage(page);

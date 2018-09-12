@@ -1,0 +1,17 @@
+extends layout.pug
+
+block vars
+  - title="Articles"
+  - description="Here are some articles that I've wrote"
+
+mixin article(name, date, link, desc)
+  p
+    span.link-title #[a(href=link)= name]
+    span.link-date= date
+  p.link-desc= desc
+
+block content
+  h1 Articles
+  
+  +article('Property-based testing vs example-based testing', 'September 01, 2018', '/articles/property-based/',
+    'A comparison of the benefits and drawbacks of using property-based testing vs example-based testing to test a function.')

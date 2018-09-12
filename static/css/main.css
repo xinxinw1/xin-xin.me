@@ -47,6 +47,12 @@ h1 {font-size: 26px;}
 h2 {font-size: 24px; font-weight: normal;}
 h3 {font-size: 19px; font-weight: normal;}
 
+.subtitle {margin-top: 0px; color: #777;}
+
+.link-title {font-weight: bold;}
+.link-date {margin-left: 15px; color: #777;}
+.link-desc {margin-top: 0;}
+
 hr {height: 1px; color: #777; background-color: #777; margin: 16px 0;}
 
 input, textarea, select {border: 1px solid #000; width: 100%; font: 16px 'Raleway', sans-serif; box-sizing: border-box;}
@@ -95,13 +101,6 @@ textarea {min-height: 100px; resize: vertical;}
 }
 
 /* Specific Page CSS */
-
-.code-title {font-weight: bold;}
-.code-desc {margin-top: 0;}
-
-.comp-title {font-weight: bold;}
-.comp-date {margin-left: 15px; color: #777;}
-.comp-desc {margin-top: 0;}
 
 /* The following idea comes from
  * https://coolestguidesontheplanet.com/videodrome/youtube/
