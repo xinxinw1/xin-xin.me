@@ -16,16 +16,11 @@ block content
     Before this term, I only knew how to write what are called *example-based tests*. These are the tests most people write where you pass specific input examples to your program and assert that the output is some specific expected output. For example, this is an example-based test:
 
     ```scala
-    def add(a: Int, b: Int): Int = a + b
+    def sort(seq: Seq[Int]): Seq[Int] = ???
 
-    test("add adds correctly") {
-      add(1, 2) shouldBe 3
+    test("sorts Seq(5, 2, 3) correctly") {
+      sort(Seq(5, 2, 3)) shouldBe Seq(2, 3, 5)
     }
     ```
 
-    ```js
-    // node.js, "classic" way:
-    var MarkdownIt = require('markdown-it'),
-    md = new MarkdownIt();
-    var result = md.render('# markdown-it rulezz!');
-    ```
+    Here, we have a specific example input, `Seq(5, 2, 3)`, and we compare the output to a specific example output, `Seq(2, 3, 5)`
