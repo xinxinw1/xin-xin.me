@@ -49,6 +49,10 @@ h3 {font-size: 19px; font-weight: normal;}
 
 .subtitle {margin-top: 0px; color: #777;}
 
+pre {margin-top: 16px; margin-bottom: 16px;}
+pre, code {font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace; font-size: 14px;}
+pre.hljs {padding: 15px 15px; background-color: #F8F8F8;}
+
 .link-title {font-weight: bold;}
 .link-date {margin-left: 15px; color: #777;}
 .link-desc {margin-top: 0;}
@@ -93,6 +97,9 @@ textarea {min-height: 100px; resize: vertical;}
 }
 
 @media print {
+  /* fix printing of background colors on chrome */
+  * {-webkit-print-color-adjust: exact;}
+
   #outer {padding: 0;}
   header > .margin {margin-top: 0;}
   footer > .margin {display: none;}

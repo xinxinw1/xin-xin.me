@@ -7,5 +7,25 @@ block vars
 block content
   h1= title
   p.subtitle September 11, 2018
-  
-  p Testing
+
+  :markdown
+    Last term, from March to August 2018, I had an internship at [Stripe](https://stripe.com/), an online payment processing company based in San Francisco. I learned a lot of things at Stripe, but the thing I want to talk about today is *property-based testing*.
+
+    ## What is property-based testing?
+
+    Before this term, I only knew how to write what are called *example-based tests*. These are the tests most people write where you pass specific input examples to your program and assert that the output is some specific expected output. For example, this is an example-based test:
+
+    ```scala
+    def add(a: Int, b: Int): Int = a + b
+
+    test("add adds correctly") {
+      add(1, 2) shouldBe 3
+    }
+    ```
+
+    ```js
+    // node.js, "classic" way:
+    var MarkdownIt = require('markdown-it'),
+    md = new MarkdownIt();
+    var result = md.render('# markdown-it rulezz!');
+    ```
