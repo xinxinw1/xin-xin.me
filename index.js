@@ -5,6 +5,7 @@ var app = express();
 var bodyParser = require('body-parser');
 var hljs = require('highlight.js');
 var md = require('markdown-it')({
+  linkify: true,
   highlight: function (str, lang) {
     if (lang && hljs.getLanguage(lang)) {
       try {

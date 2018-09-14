@@ -106,6 +106,8 @@ textarea {min-height: 100px; resize: vertical;}
   /* fix printing of background colors on chrome */
   * {-webkit-print-color-adjust: exact;}
 
+  header {display: none;}
+  footer {display: none;}
   #outer {padding: 0;}
   header > .margin {margin-top: 0;}
   footer > .margin {display: none;}
