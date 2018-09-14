@@ -11,16 +11,125 @@ block content
   :markdown
     Last term, from March to August 2018, I had an internship at [Stripe](https://stripe.com/), an online payment processing company based in San Francisco. I learned a lot of things at Stripe, but the thing I want to talk about today is *property-based testing*.
 
-    ## What is property-based testing?
+    Before we look at that though, let's go though unit testing more generally and take a look at some of the things people want out of their unit tests:
 
-    Before this term, I only knew how to write what are called *example-based tests*. These are the tests most people write where you pass specific input examples to your program and assert that the output is some specific expected output. For example, this is an example-based test:
+    ## Unit testing dreams
+
+    1. **Test passes &#8594; Code is correct**: Ideally, we'd love to have the guarantee that if the tests pass then the code is correct. Of course, this is almost impossible to achieve in practice, but we want to get as close to this as possible.
+
+    2. **Easy to write**: Developers are lazy and will write less thourough tests if testing is difficult or takes a long time.
+
+    3. **Easy to maintain**: Unit tests are code as well, and like other kinds of code, it needs to be maintained, so keeping it organized, understandable, and easy to evolve is important.
+
+    4. **Easy to find bug when test fails**: Good tests will make it easy to find the original bug when it fails and won't make you spend a lot of time interpreting the failure message.
+
+    First, I will talk about example-based testing, which is the kind of tests that most people write, and look at how it stacks up in the four points mentioned above. Then, I will introduce property-based testing and look at how it compares to example-based testing. And finally, I will talk about where it is appropriate to use one approach vs the other and why.
+
+    Note: I'm going to be using Scala for my examples here, but the ideas here will apply to other languages as well.
+    
+    ## Example-based testing
+
+    Before this term, I only knew how to write what are called *example-based tests*. These are the tests most people write where you pass specific input examples to your program and assert that the output is some specific expected output.
+
+    Suppose we wrote a Scala function to sort a list of integers:
 
     ```scala
-    def sort(seq: Seq[Int]): Seq[Int] = ???
+    def sort(seq: Seq[Int]): Seq[Int] = {
+      // some sorting logic
+      ???
+    }
+    ```
 
+    An example-based test for this function could look like this:
+
+    ```scala
     test("sorts Seq(5, 2, 3) correctly") {
       sort(Seq(5, 2, 3)) shouldBe Seq(2, 3, 5)
     }
     ```
 
-    Here, we have a specific example input, `Seq(5, 2, 3)`, and we compare the output to a specific example output, `Seq(2, 3, 5)`
+    We have a specific example input, `Seq(5, 2, 3)`, and we compare the output to a specific example output, `Seq(2, 3, 5)`.
+
+    Now, how does this stack up in our unit testing dreams?
+    
+    ### Test passes &#8594; Code is correct
+
+    Example-based testing does really badly in this respect. For example, this implementation will pass the unit test above:
+
+    ```scala
+    def sort(seq: Seq[Int]): Seq[Int] = {
+      Seq(2, 3, 5)
+    }
+    ```
+
+    Clearly, this doesn't correctly sort the input sequence. In fact, it's almost entirely useless. But if your only goal was to make the test pass, this would be the easiest way to do so.
+
+    One "solution" might be to write more complex examples, but that still won't be able to differentiate between a correct solution and one with the test input and output hard-coded.
+
+    ### Easy to write
+
+    It's relatively easy to come up with one simple example and write a test that tests it. Writing complex examples becomes progressively more difficult. With the example-based approach, you'll have to manually create a complete instance of your input object(s) by hand, which can take a lot of time if your input objects are somewhat large and complex.
+
+    ### Easy to maintain
+
+    When a field is added to the input object, all the test objects will have to be updated to include the new field, which can be a time-consuming process.
+
+    Also, using multiple examples means that test code that is written for one example will likely be duplicated for the other examples.
+
+    This makes maintaining example-based tests more difficult.
+
+    ### Easy to find bug when test fails
+
+    This is one place where example-based testing is actually pretty good. If the output doesn't match the expected output, you'll have a nice, hand-constructed input that you can work with, and it will be easy to see where the actual output is different from expected, making it easy to debug the original program using the test.
+
+    ## Property-based testing
+
+    In contrast to example-based testing, with property-based testing, no examples are explicitly specified in the test. Instead, we assert that some properties or invariants about the output are true *for all possible input values*.
+
+    For the sort function, only two properties are required:
+
+    1. The output should have the same elements as the input
+
+    2. Each element in the output should be less than or equal to the next element
+
+    If both of these are true for all inputs, then we can guarantee that the sort function is correct. We can encode these properties as a property-based test:
+
+    ```scala
+    test("sort satisfies sorting properties") {
+      forAll { (seq: Seq[Int]) =>
+        // Sort the input
+        val output = sort(seq)
+
+        // 1. The output should have the same elements as the input
+        output should contain theSameElementsAs seq
+        
+        // 2. Each element in the output should be less than or equal to the next element
+        if (!seq.isEmpty) {
+          for ((curr, next) <- output zip output.tail) {
+            curr should be <= next
+          }
+        }
+      }
+    }
+    ```
+
+    Obviously, the testing framework can't test the infinitely many `Seq[Int]` inputs. Instead, it'll randomly generate a large number of `Seq[Int]` values to try, and the test passes if the properties are true for all the generated values.
+
+    How does property-based testing stack up in our unit testing dreams?
+
+    ### Test passes &#8594; Code is correct
+
+    The property-based test is much better in this respect than the example-based test. We're testing the exact properties that fefine what it means to be sorted, so by definition, for a given generated test input, the test passes if and only if the output is correctly sorted.
+
+    Since the test is run on many different inputs, if it passes on all of them, we can have a high confidence that the code is correct.
+
+    The downside is that the property-based test may miss problems if it happens to not generate the right value to trigger it. This can be reduced by specifying that 100 or 1000 or even 10000 values are generated, but even then, there will be a lot of values that are never generated.
+
+    ### Easy to write
+
+    Writing property-based tests does involve more thinking to come up with invariants to use, so they can be harder to write. On the other hand, when writing example-based tests, you have to put a lot of thought into making sure you cover all the edge cases, while property-based testing frameworks will do that automatically by including edge cases in the random value generation process.
+
+    If you're writing an example-based test that involves a complex data model structure, you'll need to construct a test input structure by hand, but most property-based testing frameworks provide helper functions that make it easy to generate random instances of the struct with random values filled in, recursively filling in any nested structures.
+
+    ### Easy to maintain
+

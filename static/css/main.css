@@ -17,13 +17,13 @@ header .td:first-child {width: 100%; font-size: 35px; line-height: 40px; font-we
 header a {text-decoration: none; color: #000; -webkit-tap-highlight-color: transparent;}
 
 #nav-hori, #nav-link img {vertical-align: middle;}
-#nav-hori {list-style: none; display: none;}
+#nav-hori {list-style: none; display: none; margin: 0;}
 #nav-hori li {display: inline-block;}
 #nav-hori a {display: inline-block; padding: 0 15px; line-height: 40px; font-size: 20px;}
 #nav-hori a:hover, #nav-hori a:active {background-color: #EEE;}
 
 #nav-drop-cont {position: relative; display: inline-block;}
-#nav-drop {display: none; position: absolute; right: 0px; top: -8px; box-shadow: 4px 4px 20px #C0C0C0; background-color: #FDFDFD; border-radius: 3px; z-index: 5; list-style: none;}
+#nav-drop {display: none; position: absolute; right: 0px; top: -8px; box-shadow: 4px 4px 20px #C0C0C0; background-color: #FDFDFD; border-radius: 3px; z-index: 5; list-style: none; margin: 0;}
 #nav-drop li {display: block;}
 #nav-drop a {display: block; font-size: 20px; padding: 8px 15px;}
 /*nav-drop li:first-child a {font-size: 26px;}*/
@@ -45,7 +45,7 @@ a {color: #005EC8;}
 
 h1 {font-size: 26px;}
 h2 {font-size: 24px; font-weight: normal;}
-h3 {font-size: 19px; font-weight: normal;}
+h3 {font-size: 20px; font-weight: normal;}
 
 .subtitle {margin-top: 0px; color: #777;}
 
@@ -60,6 +60,10 @@ code.hljs {padding: 15px;}
 .link-desc {margin-top: 0;}
 
 hr {height: 1px; color: #777; background-color: #777; margin: 16px 0;}
+
+ol, ul {margin-top: 16px; margin-bottom: 16px;}
+ol {margin-left: 31px;} /* 16px is neutral */
+ul {margin-left: 33px;} /* 18px is neutral */
 
 input, textarea, select {border: 1px solid #000; width: 100%; font: 16px 'Raleway', sans-serif; box-sizing: border-box;}
 input[type="text"], input[type="password"], textarea {padding: 10px 10px;}
