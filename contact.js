@@ -6,34 +6,23 @@ var email;
 try {
   email = require('./email-config.json');
 } catch (e){
-  email = {
-    host: process.env.EMAIL_HOST,
-    from: process.env.EMAIL_FROM,
-    pass: process.env.EMAIL_PASS,
-    to: process.env.EMAIL_TO
-  };
+  console.log("Warning: Email not configured");
 }
 
 /* If email is configured, create transporter */
 
-if (email.host && email.from && email.pass && email.to){
-  var smtpConfig = {
-    host: email.host,
-    port: 465,
-    secure: true,
-    auth: {
-      user: email.from,
-      pass: email.pass
-    }
-  };
-  var transporter = nodemailer.createTransport(smtpConfig);
-} else {
-  console.log("Warning: Email not configured");
+var transporter;
+if (email) {
+  if (email.smtpConfig && email.from && email.to){
+    var transporter = nodemailer.createTransport(email.smtpConfig);
+  } else {
+    console.log("Warning: Email file not valid");
+  }
 }
 
 function sendContact(obj, cb){
   // check if email is configured
-  if (!transporter || !email.to){
+  if (!transporter || !email || !email.from || !email.to){
     console.log("Error: Email not configured");
     cb({error: true, message: "Email not configured."});
     return;
