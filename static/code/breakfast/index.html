@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Breakfast</title>
+    <meta charset="UTF-8">
+    <style type="text/css">
+    .space {margin-bottom: 5px;}
+    #set-time {display: none;}
+    </style>
+</head>
+
+<body>
+    <div class="space" id="disp-time">
+        The current time is <span id="curr-time"></span>. (<a href="#" onClick="setTime()">set time</a>)
+    </div>
+    <div class="space" id="set-time">
+        The current time is <input type="text" id="hours" size="2" /> : <input type="text" id="minutes" size="2" />.
+    </div>
+    <div class="space">
+        <input type="button" value="Do I have breakfast?" onClick="showChoice()" />
+    </div>
+    <div id="output"></div>
+    <script>
+    // hours: int in [0, 23]
+    // mins: int in [0, 59]
+    // return: ?float
+    function calculateProb(hours, mins) {
+        console.log('calculating prob with', hours, mins);
+        if (hours < 8) return null;
+        if (hours < 10) return 1.0;
+        if (hours == 10) {
+            if (mins < 30) return (30 - mins) / 30.0;
+            return 0.0;
+        }
+        if (hours < 12) return 0.0;
+        return null;
+    }
+
+    // prob: float in [0, 1]
+    // return: boolean
+    function evalProb(prob) {
+        return Math.random() < prob;
+    }
+
+    // hours: int
+    // mins: int
+    // return: str
+    function getOutputText(hours, mins) {
+        const prob = calculateProb(hours, mins);
+        if (prob === null) return 'N/A';
+        const hasBreakfast = evalProb(prob);
+        if (hasBreakfast) return 'Yes';
+        return 'No';
+    }
+
+    const date = new Date();
+    const dateHours = date.getHours();
+    const dateMins = date.getMinutes();
+
+    document.getElementById('hours').value = dateHours;
+    document.getElementById('minutes').value = dateMins;
+    const timeStr = `${String(dateHours).padStart(2, '0')}:${String(dateMins).padStart(2, '0')}`;
+    document.getElementById('curr-time').innerHTML = timeStr;
+
+    function setTime() {
+        document.getElementById('disp-time').style.display = 'none';
+        document.getElementById('set-time').style.display = 'block';
+    }
+
+    function showChoice() {
+        const hours = Number(document.getElementById('hours').value);
+        const mins = Number(document.getElementById('minutes').value);
+        const outputText = getOutputText(hours, mins);
+        document.getElementById('output').innerHTML = outputText;
+    }
+    </script>
+</body>
+
+</html>
