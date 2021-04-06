@@ -23,6 +23,6 @@
     "highlight.js": "^9.15.6",
     "markdown-it": "^8.4.2",
     "nodemailer": "^2.7.2",
-    "pug": "^2.0.3"
+    "pug": "^3.0.1"
   }
 }
