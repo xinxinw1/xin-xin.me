@@ -20,7 +20,7 @@
   "dependencies": {
     "body-parser": "^1.18.3",
     "express": "^4.16.4",
-    "highlight.js": "^9.15.6",
+    "highlight.js": "^10.4.1",
     "markdown-it": "^8.4.2",
     "nodemailer": "^2.7.2",
     "pug": "^2.0.3"
