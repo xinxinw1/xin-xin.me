@@ -26,6 +26,24 @@
     </div>
     <div id="output"></div>
     <script>
+    function binomial(n, k) {
+        if (k < 0 || k > n) return 0;
+        if (k > n - k) k = n - k;
+        let res = 1;
+        for (let i = 0; i < k; i++) {
+            res *= (n - k + i + 1) / (i + 1);
+        }
+        return Math.round(res);
+    }
+
+    function binomialCdf(n, k, p) {
+        let sum = 0;
+        for (let i = 0; i <= k; i++) {
+            sum += binomial(n, i) * Math.pow(p, i) * Math.pow(1 - p, n - i);
+        }
+        return sum;
+    }
+
     // hours: int in [0, 23]
     // mins: int in [0, 59]
     // return: ?float
@@ -33,8 +51,13 @@
         console.log('calculating prob with', hours, mins);
         if (hours < 8) return null;
         if (hours < 10) return 1.0;
-        if (hours == 10) {
-            if (mins < 30) return (30 - mins) / 30.0;
+        if (hours === 10) {
+            if (mins === 0) return 1.0;
+            if (mins < 30) {
+                const probNo = binomialCdf(28, mins - 1, 9/28);
+                console.log('prob no', probNo);
+                return 1 - probNo;
+            }
             return 0.0;
         }
         if (hours < 12) return 0.0;
@@ -57,6 +80,7 @@
     const timeStr = `${String(hours).padStart(2, '0')}:${String(mins).padStart(2, '0')}`;
     document.getElementById('curr-time').innerHTML = timeStr;
 
+    let prob = null;
     updateProb();
 
     function setTime() {
@@ -80,8 +104,8 @@
             return;
         }
         const probNo = 1 - prob;
-        const probNoRound = Math.round(probNo * 10000) / 10000;
-        document.getElementById('prob-no').innerHTML = probNoRound;
+        const probNoRound = Math.round(probNo * 1000000) / 10000;
+        document.getElementById('prob-no').innerHTML = String(probNoRound) + '%';
         if (probNo === 0 || probNo === 1) {
             document.getElementById('out-of-no').innerHTML = '';
         } else {
