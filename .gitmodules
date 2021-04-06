@@ -22,3 +22,6 @@
 [submodule "static/code/day-month-year"]
 	path = static/code/day-month-year
 	url = https://github.com/xinxinw1/day-month-year
+[submodule "static/code/breakfast"]
+	path = static/code/breakfast
+	url = git@github.com:xinxinw1/breakfast.git
