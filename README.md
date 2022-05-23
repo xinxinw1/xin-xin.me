@@ -11,6 +11,16 @@ To run my website on your computer, follow the following steps. You'll need to h
 3. `npm install`
 4. `npm start`
 
+## Run Locally in Docker
+
+### Build
+
+`docker build . -t xinxinw/xin-xin.me`
+
+### Run
+
+`docker run -p 8080:8080 -d xinxinw/xin-xin.me`
+
 ## License
 
 The content of my website is licensed under [CC BY-ND](https://creativecommons.org/licenses/by-nd/4.0/).
