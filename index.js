@@ -99,9 +99,18 @@ app.use(function (req, res){
 /* Listen on port or export app */
 
 if (require.main === module){
-  app.listen(app.get('port'), app.get('hostname'), function () {
+  const server = app.listen(app.get('port'), app.get('hostname'), function () {
     console.log('Listening on port ' + app.get('port') + '!');
   });
+
+  function gracefulShutdown() {
+    console.log('Shutting down server...');
+    server.close(function () {
+      console.log('Server shut down.');
+    });
+  }
+
+  process.on('SIGTERM', gracefulShutdown);
 } else {
   module.exports = app;
 }
