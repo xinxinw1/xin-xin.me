@@ -15,11 +15,16 @@ To run my website on your computer, follow the following steps. You'll need to h
 
 ### Build
 
-`docker build . -t xinxinw/xin-xin.me`
+```
+$ docker build . -t xinxinw/xin-xin.me
+$ docker push xinxinw/xin-xin.me
+```
 
 ### Run
 
-`docker run -p 8080:8080 -d xinxinw/xin-xin.me`
+```
+docker run -p 8080:8080 -d xinxinw/xin-xin.me
+```
 
 ## License
 
