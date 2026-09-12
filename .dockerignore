@@ -1,2 +1,15 @@
-node_modules
-npm-debug.log
+**/.git
+**/node_modules
+**/npm-debug.log
+email-config.json
+static/music
+static/files
+process.yml
+
+# Build/VCS metadata - not needed at runtime
+Dockerfile
+.dockerignore
+.gitignore
+.gitmodules
+README.md
+process.example.yml
